@@ -2,6 +2,10 @@ const express = require('express')
 
 const app = express()
 
+
+//++++++++++++++++++++++++ MIDDLEWARE +++++++++++++++++++++++
+app.use(express.json())
+
 app.get('/', (req, res) => {
   res.send('Home page')
 })
