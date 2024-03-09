@@ -8,6 +8,8 @@ const AuthRoute = require('./routes/authRoutes/authRoutes')
 
 const connect = require('./db/connect')
 
+const cookieParser = require('cookie-parser')
+
 //+++++++++++++++++++ Import Error Middleware +++++++++++++++++++++++++++++++++
 const ErrorHandlerMiddleware = require('./middleware/ErrorHandler')
 
@@ -17,6 +19,7 @@ const app = express()
 
 //++++++++++++++++++++++++ MIDDLEWARE +++++++++++++++++++++++
 app.use(express.json())
+app.use(cookieParser(process.env.JWT_LIFETIME))
 
 app.get('/', (req, res) => {
   res.send('Home page')
