@@ -4,13 +4,15 @@ require('dotenv').config()
 
 const express = require('express')
 
+//+++++++++++++++++++ Import Routes+++++++++++++++++++++++++++++++++
 const AuthRoute = require('./routes/authRoutes/authRoutes')
+const UserRoute = require('./routes/UsersRoutes/userRoutes')
 
 const connect = require('./db/connect')
 
 const cookieParser = require('cookie-parser')
 
-//+++++++++++++++++++ Import Error Middleware +++++++++++++++++++++++++++++++++
+//+++++++++++++++++++ Import Error Middleware+++++++++++++++++++++++++++++++++
 const ErrorHandlerMiddleware = require('./middleware/ErrorHandler')
 
 const notFoundMiddleware = require('./middleware/NotFound')
@@ -28,6 +30,7 @@ app.get('/', (req, res) => {
 //++++++++++++++++++++++++ Routes Handling +++++++++++++++++++++++
 
 app.use('/api/v1/jobhunt/auth', AuthRoute)
+app.use('/api/v1/jobhunt/users', UserRoute)
 
 //++++++++++++++++++++++++ Error Handler MIDDLEWARE +++++++++++++++++++++++
 app.use(ErrorHandlerMiddleware)
