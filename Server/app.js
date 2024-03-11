@@ -4,11 +4,15 @@ require('dotenv').config()
 
 const express = require('express')
 
+//+++++++++++++++++++ Import Routes+++++++++++++++++++++++++++++++++
 const AuthRoute = require('./routes/authRoutes/authRoutes')
+const UserRoute = require('./routes/UsersRoutes/userRoutes')
 
 const connect = require('./db/connect')
 
-//+++++++++++++++++++ Import Error Middleware +++++++++++++++++++++++++++++++++
+const cookieParser = require('cookie-parser')
+
+//+++++++++++++++++++ Import Error Middleware+++++++++++++++++++++++++++++++++
 const ErrorHandlerMiddleware = require('./middleware/ErrorHandler')
 
 const notFoundMiddleware = require('./middleware/NotFound')
@@ -17,6 +21,7 @@ const app = express()
 
 //++++++++++++++++++++++++ MIDDLEWARE +++++++++++++++++++++++
 app.use(express.json())
+app.use(cookieParser(process.env.JWT_LIFETIME))
 
 app.get('/', (req, res) => {
   res.send('Home page')
@@ -25,6 +30,7 @@ app.get('/', (req, res) => {
 //++++++++++++++++++++++++ Routes Handling +++++++++++++++++++++++
 
 app.use('/api/v1/jobhunt/auth', AuthRoute)
+app.use('/api/v1/jobhunt/users', UserRoute)
 
 //++++++++++++++++++++++++ Error Handler MIDDLEWARE +++++++++++++++++++++++
 app.use(ErrorHandlerMiddleware)

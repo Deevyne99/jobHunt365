@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const bcyrpt = require('bcryptjs')
 
 const UserSchema = new mongoose.Schema({
   firstName: {
@@ -30,6 +31,27 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Please provide password'],
     minlength: 6,
   },
+  role: {
+    type: String,
+    enum: ['admin', 'user', 'agent'],
+    default: 'user',
+  },
+  verificationToken: String,
+  isVerified: {
+    type: Boolean,
+    default: false,
+  },
+  verified: Date,
 })
+
+UserSchema.pre('save', async function () {
+  const salt = await bcyrpt.genSalt(10)
+  this.password = await bcyrpt.hash(this.password, salt)
+})
+
+UserSchema.methods.comparePassword = async function (candidatePassword) {
+  const match = await bcyrpt.compare(candidatePassword, this.password)
+  return match
+}
 
 module.exports = mongoose.model('User', UserSchema)
