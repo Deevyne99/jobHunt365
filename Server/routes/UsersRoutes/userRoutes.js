@@ -8,9 +8,11 @@ const {
   updateUserPassword,
 } = require('../../controllers/userController')
 
+const AuthenticateUser = require('../../middleware/AuthenticateUser')
+
 const router = express.Router()
 
-router.route('/').get(getAllUsers)
+router.route('/').get(AuthenticateUser, getAllUsers)
 
 router.route('/updateUserPassword').patch(updateUserPassword)
 
