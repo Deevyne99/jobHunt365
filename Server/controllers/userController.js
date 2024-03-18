@@ -1,6 +1,11 @@
 const CustomApiError = require('../errors')
 const User = require('../models/User')
 const { StatusCodes } = require('http-status-codes')
+const {
+  createTokenUser,
+  attachCookiesToResponse,
+  checkPermission,
+} = require('../utils')
 
 const getAllUsers = async (req, res) => {
   console.log(req.user)
@@ -17,11 +22,27 @@ const getSingleUser = async (req, res) => {
     )
   }
 
+  checkPermission(req.user, user._id)
+
   res.status(StatusCodes.OK).json({ success: true, user })
 }
 
 const updateUser = async (req, res) => {
-  res.send('Update User')
+  const { firstName, lastName, email, phoneNumber, location } = req.body
+
+  if (!firstName || !lastName || !email || !phoneNumber || !location) {
+    throw new CustomApiError.BadRequestError('Please enter all fields')
+  }
+  const user = await User.findOne({ _id: req.user.userId })
+  user.firstName = firstName
+  user.lastName = lastName
+  user.location = location
+  user.phoneNumber = phoneNumber
+  user.email = email
+  await user.save()
+  const tokenUser = createTokenUser(user)
+  attachCookiesToResponse({ res, user: tokenUser })
+  res.status(StatusCodes.OK).json({ success: true, tokenUser })
 }
 
 const deleteUser = async (req, res) => {
@@ -29,11 +50,27 @@ const deleteUser = async (req, res) => {
 }
 
 const showUser = async (req, res) => {
-  res.send('show user')
+  res.status(StatusCodes.OK).json({ success: true, user: req.user })
 }
 
 const updateUserPassword = async (req, res) => {
-  res.send('update user password')
+  const { oldPassword, newPassword } = req.body
+  console.log(oldPassword, newPassword)
+  if (!oldPassword || !newPassword) {
+    throw new CustomApiError.BadRequestError('Please enter both values')
+  }
+  const user = await User.findOne({ _id: req.user.userId })
+  const isPasswordMatch = await user.comparePassword(oldPassword)
+  if (!isPasswordMatch) {
+    throw new CustomApiError.UnAuthenticatedError('Invalid password')
+  }
+
+  user.password = newPassword
+  await user.save()
+
+  res
+    .status(StatusCodes.OK)
+    .json({ success: true, msg: 'Password update was succesful' })
 }
 
 module.exports = {

@@ -8,16 +8,21 @@ const {
   updateUserPassword,
 } = require('../../controllers/userController')
 
-const AuthenticateUser = require('../../middleware/AuthenticateUser')
+const {
+  AuthenticateUser,
+  AuthorizeUser,
+} = require('../../middleware/AuthenticateUser')
 
 const router = express.Router()
 
-router.route('/').get(AuthenticateUser, getAllUsers)
+router.route('/').get(AuthenticateUser, AuthorizeUser('admin'), getAllUsers)
 
-router.route('/updateUserPassword').patch(updateUserPassword)
+router.route('/updateUserPassword').patch(AuthenticateUser, updateUserPassword)
 
-router.route('/showMe').get(showUser)
+router.route('/showMe').get(AuthenticateUser, showUser)
 
-router.route('/:id').get(getSingleUser).delete(deleteUser).patch(updateUser)
+router.route('/updateUser').patch(AuthenticateUser, updateUser)
+
+router.route('/:id').get(AuthenticateUser, getSingleUser).delete(deleteUser)
 
 module.exports = router
