@@ -18,6 +18,11 @@ const JobApplied = new mongoose.Schema({
     enum: ['Remote', 'Onsite', 'Hybrid'],
     default: 'Onsite',
   },
+  jobType: {
+    type: String,
+    enum: ['Internship', 'Part Time', 'Full Time', 'Contract'],
+    default: 'Full Time',
+  },
   dateApplied: {
     type: Date,
     default: Date.now,
@@ -41,4 +46,4 @@ const JobApplied = new mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model('JobApplied', JobApplied)
+module.exports = mongoose.model('AppliedJobs', AppliedJob)
