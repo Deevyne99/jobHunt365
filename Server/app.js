@@ -7,6 +7,8 @@ const express = require('express')
 //+++++++++++++++++++ Import Routes+++++++++++++++++++++++++++++++++
 const AuthRoute = require('./routes/authRoutes/authRoutes')
 const UserRoute = require('./routes/UsersRoutes/userRoutes')
+const JobRoutes = require('./routes/jobRoutes/jobRoutes')
+//+++++++++++++++++++ END of Routes+++++++++++++++++++++++++++++++++
 
 const connect = require('./db/connect')
 
@@ -31,6 +33,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/jobhunt/auth', AuthRoute)
 app.use('/api/v1/jobhunt/users', UserRoute)
+app.use('/api/v1/jobhunt/jobs', JobRoutes)
 
 //++++++++++++++++++++++++ Error Handler MIDDLEWARE +++++++++++++++++++++++
 app.use(ErrorHandlerMiddleware)
