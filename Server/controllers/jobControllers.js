@@ -3,11 +3,14 @@ const CustomApiError = require('../errors')
 const { StatusCodes } = require('http-status-codes')
 
 const createJobs = async (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: 'create job route' })
+  req.body.user = req.user.userId
+  const job = await Jobs.create(req.body)
+  res.status(StatusCodes.CREATED).json({ success: true, job })
 }
 
 const getAllJobs = async (req, res) => {
-  res.send('Get all jobs')
+  const jobs = await Jobs.find({})
+  res.status(StatusCodes.OK).json({ success: true, count: jobs.length, jobs })
 }
 
 const updateJob = async (req, res) => {
@@ -15,14 +18,25 @@ const updateJob = async (req, res) => {
 }
 
 const deleteJob = async (req, res) => {
-  res.send('delete job')
+  const { id: jobId } = req.params
+  const job = await Jobs.findOneAndDelete({ _id: jobId })
+  if (!job) {
+    throw new CustomApiError.NotFoundError(`no job with the id ${id}`)
+  }
+
+  res.status(StatusCodes.OK).json({ msg: 'Deleted successfully' })
 }
 
 const getSingleJob = async (req, res) => {
-  res.send('Get Single job')
+  const { id: jobId } = req.params
+  const job = await Jobs.findOne({ _id: jobId })
+  if (!job) {
+    throw new CustomApiError.NotFoundError(`no job with the id: ${jobId}`)
+  }
+  res.status(StatusCodes.OK).json({ success: true, job })
 }
 
-module.exports = createJobs = {
+module.exports = {
   createJobs,
   getAllJobs,
   deleteJob,

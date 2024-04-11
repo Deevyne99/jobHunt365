@@ -14,14 +14,14 @@ const router = express.Router()
 
 router
   .route('/create')
-  .post(AuthenticateUser, AuthorizeUser(['agent', 'admin']), createJobs)
+  .post(AuthenticateUser, AuthorizeUser('admin', 'agent'), createJobs)
 
 router.route('/allJobs').get(AuthenticateUser, getAllJobs)
 
 router
   .route('/singleJob/:id')
   .get(AuthenticateUser, getSingleJob)
-  .patch(AuthenticateUser, AuthorizeUser(['agent', 'admin']), updateJob)
-  .delete(AuthenticateUser, AuthorizeUser(['agent', 'admin']), deleteJob)
+  .patch(AuthenticateUser, AuthorizeUser('agent', 'admin'), updateJob)
+  .delete(AuthenticateUser, AuthorizeUser('admin'), deleteJob)
 
 module.exports = router

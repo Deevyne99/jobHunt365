@@ -34,6 +34,11 @@ const updateUser = async (req, res) => {
     throw new CustomApiError.BadRequestError('Please enter all fields')
   }
   const user = await User.findOne({ _id: req.user.userId })
+  if (!user) {
+    throw new CustomApiError.NotFoundError(
+      `user with the id ${req.user.userId} does not exist`
+    )
+  }
   user.firstName = firstName
   user.lastName = lastName
   user.location = location
@@ -46,7 +51,13 @@ const updateUser = async (req, res) => {
 }
 
 const deleteUser = async (req, res) => {
-  res.send('delete user')
+  const { id } = req.params
+  const user = await User.findOneAndDelete({ _id: id })
+  if (!user) {
+    throw new CustomApiError.NotFoundError(`no user with the id ${id}`)
+  }
+
+  res.status(StatusCodes.OK).json({ msg: 'Deleted successfully' })
 }
 
 const showUser = async (req, res) => {

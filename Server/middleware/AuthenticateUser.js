@@ -3,7 +3,7 @@ const { verifyToken } = require('../utils')
 
 const AuthenticateUser = (req, res, next) => {
   const token = req.signedCookies.token
-  console.log(token)
+  // console.log(token)
   if (!token) {
     throw new CustomApiError.UnAuthenticatedError('UnAthuthenticated User')
   }

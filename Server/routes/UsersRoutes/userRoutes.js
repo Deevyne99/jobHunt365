@@ -25,7 +25,7 @@ router.route('/updateUser').patch(AuthenticateUser, updateUser)
 
 router
   .route('/:id')
-  .get(AuthenticateUser, AuthorizeUser('admin'), getSingleUser)
+  .get(AuthenticateUser, getSingleUser)
   .delete(AuthenticateUser, AuthorizeUser('admin'), deleteUser)
 
 module.exports = router
