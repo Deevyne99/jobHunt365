@@ -21,7 +21,7 @@ router.route('/allJobs').get(AuthenticateUser, getAllJobs)
 router
   .route('/singleJob/:id')
   .get(AuthenticateUser, getSingleJob)
-  .patch(AuthenticateUser, AuthorizeUser('agent', 'admin'), updateJob)
+  .patch(AuthenticateUser, AuthorizeUser('admin', 'agent'), updateJob)
   .delete(AuthenticateUser, AuthorizeUser('admin'), deleteJob)
 
 module.exports = router

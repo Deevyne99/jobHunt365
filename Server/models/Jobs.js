@@ -15,6 +15,11 @@ const JobSchema = new mongoose.Schema(
       required: [true, 'Please enter the company'],
     },
     locationType: ['Remote', 'Onsite', 'Hybrid'],
+    jobType: {
+      type: String,
+      enum: ['full-time', 'part-time', 'remote', 'internship'],
+      default: 'full-time',
+    },
     description: {
       type: String,
       required: [true, 'Please enter the job description'],

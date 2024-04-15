@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-const JobApplied = new mongoose.Schema({
-  user: {
+const AppliedJob = new mongoose.Schema({
+  createdBy: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
     require: [true, 'Please provide user'],
