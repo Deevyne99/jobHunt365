@@ -8,6 +8,7 @@ const {
   getAllAppliedJobs,
   getSingleAppliedJobs,
   deleteAppliedJobs,
+  updateAppliedJobs,
 } = require('../../controllers/AppliedJobsControllers')
 const router = express.Router()
 
@@ -19,5 +20,6 @@ router
   .route('/:id')
   .get(AuthenticateUser, getSingleAppliedJobs)
   .delete(AuthenticateUser, deleteAppliedJobs)
+  .patch(AuthenticateUser, updateAppliedJobs)
 
 module.exports = router
