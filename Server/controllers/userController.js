@@ -1,6 +1,7 @@
 const CustomApiError = require('../errors')
 const User = require('../models/User')
 const { StatusCodes } = require('http-status-codes')
+const path = require('path')
 const {
   createTokenUser,
   attachCookiesToResponse,
@@ -11,6 +12,30 @@ const getAllUsers = async (req, res) => {
   console.log(req.user)
   const users = await User.find({})
   res.status(StatusCodes.OK).json({ success: true, count: users.length, users })
+}
+
+const uploadAvatar = async (req, res) => {
+  console.log(req.files)
+  if (!req.files) {
+    throw new CustomApiError.BadRequestError('No file was uploaded')
+  }
+  const avatar = req.files.image
+  if (!avatar.mimetype.startsWith('image')) {
+    throw new CustomApiError.BadRequestError('Please upload an image')
+  }
+  const maxSize = 1024 * 1024 * 2
+  if (avatar > maxSize) {
+    throw new CustomApiError.BadRequestError(
+      'Please Upload image less than 2mb'
+    )
+  }
+  const imagePath = path.join(
+    __dirname,
+    '../images/avatars/' + `${avatar.name}`
+  )
+
+  await avatar.mv(imagePath)
+  res.status(StatusCodes.OK).json({ image: `/avatars/${avatar.name}` })
 }
 
 const getSingleUser = async (req, res) => {
@@ -91,4 +116,5 @@ module.exports = {
   deleteUser,
   updateUser,
   updateUserPassword,
+  uploadAvatar,
 }

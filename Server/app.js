@@ -2,6 +2,8 @@ require('express-async-errors')
 
 require('dotenv').config()
 
+const fileUpload = require('express-fileupload')
+
 const express = require('express')
 
 //+++++++++++++++++++ Import Routes+++++++++++++++++++++++++++++++++
@@ -23,6 +25,7 @@ const notFoundMiddleware = require('./middleware/NotFound')
 const app = express()
 
 //++++++++++++++++++++++++ MIDDLEWARE +++++++++++++++++++++++
+app.use(fileUpload())
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_LIFETIME))
 

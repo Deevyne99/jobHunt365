@@ -6,6 +6,7 @@ const {
   deleteUser,
   updateUser,
   updateUserPassword,
+  uploadAvatar,
 } = require('../../controllers/userController')
 
 const {
@@ -17,11 +18,15 @@ const router = express.Router()
 
 router.route('/').get(AuthenticateUser, AuthorizeUser('admin'), getAllUsers)
 
+router.route('/upload').post(AuthenticateUser, uploadAvatar)
+
 router.route('/updateUserPassword').patch(AuthenticateUser, updateUserPassword)
 
 router.route('/showMe').get(AuthenticateUser, showUser)
 
 router.route('/updateUser').patch(AuthenticateUser, updateUser)
+
+// router.route('/upload/:id').patch(AuthenticateUser, uploadAvatar)
 
 router
   .route('/:id')
