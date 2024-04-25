@@ -46,7 +46,7 @@ const Register = () => {
         <div className='w-full'>
           <InputComponent label='password' />
         </div>
-        <div className='w-full'>
+        <div className='w-full mt-4'>
           <Button />
         </div>
       </div>
