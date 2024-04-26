@@ -33,10 +33,49 @@ const createAppliedJob = async (req, res) => {
 }
 
 const getAllAppliedJobs = async (req, res) => {
-  const appliedJobs = await AppliedJobs.find({ createdBy: req.user.userId })
+  const { search, status, jobType, locationType, sort } = req.query
+  const queryObject = {
+    createdBy: req.user.userId,
+  }
+  if (search) {
+    queryObject.title = { $regex: search, $options: 'i' }
+  }
+  if (status && status !== 'all') {
+    queryObject.status = status
+  }
+  if (jobType && jobType !== 'all') {
+    queryObject.jobType = jobType
+  }
+  if (locationType && locationType !== 'all') {
+    queryObject.locationType = locationType
+  }
+  let result = AppliedJobs.find(queryObject)
+  if (sort === 'latest') {
+    result = result.sort('-createdAt')
+  }
+  if (sort === 'oldest') {
+    result = result.sort('createdAt')
+  }
+  if (sort === 'a-z') {
+    result = result.sort('title')
+  }
+  if (sort === 'z-a') {
+    result = result.sort('-title')
+  }
+
+  //pagination
+  const page = Number(req.query.page) || 1
+  const limit = Number(req.query.limit) || 10
+  const skip = (page - 1) * limit
+  result = result.skip(skip).limit(limit)
+
+  const appliedJobs = await result
+  const totalJobs = await AppliedJobs.countDocuments(queryObject)
+  const numOfPages = Math.ceil(totalJobs / limit)
+
   res
     .status(StatusCodes.CREATED)
-    .json({ success: true, count: appliedJobs.length, appliedJobs })
+    .json({ success: true, totalJobs, numOfPages, appliedJobs })
 }
 
 const getSingleAppliedJobs = async (req, res) => {

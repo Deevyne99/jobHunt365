@@ -34,6 +34,9 @@ const JobSchema = new mongoose.Schema(
       default: 0,
       required: [true, 'Please enter the minimum salary'],
     },
+    logo: {
+      type: String,
+    },
     user: {
       type: mongoose.Schema.ObjectId,
       ref: 'User',
