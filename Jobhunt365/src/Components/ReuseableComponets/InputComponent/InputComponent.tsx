@@ -3,8 +3,8 @@
 const InputComponent = ({ label }: { label: string }) => {
   return (
     <div className=' flex  flex-col justify-center items-center mx-auto w-[90%]  sm:w-full '>
-      <div className='flex flex-col w-full  '>
-        <label htmlFor='' className='capitalize flex items-center text-left'>
+      <div className='flex flex-col w-full gap-1 '>
+        <label htmlFor='' className='capitalize flex items-center text-left '>
           {label}
         </label>
         <input

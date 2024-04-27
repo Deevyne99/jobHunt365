@@ -4,10 +4,11 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Navbar from './Components/Navbar'
 import Error from './pages/Error'
+import Jobs from './pages/dashboard/Jobs'
 
 function App() {
   return (
-    <>
+    <div className='bg-[#F5F7FB]'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Navbar />}>
@@ -16,9 +17,10 @@ function App() {
           </Route>
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/jobs' element={<Jobs />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 
