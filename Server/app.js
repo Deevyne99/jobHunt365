@@ -2,11 +2,16 @@ require('express-async-errors')
 
 require('dotenv').config()
 
+const fileUpload = require('express-fileupload')
+
 const express = require('express')
 
 //+++++++++++++++++++ Import Routes+++++++++++++++++++++++++++++++++
 const AuthRoute = require('./routes/authRoutes/authRoutes')
 const UserRoute = require('./routes/UsersRoutes/userRoutes')
+const JobRoutes = require('./routes/jobRoutes/jobRoutes')
+const AppliedJobRoutes = require('./routes/AppliedJobRoutes/AppliedJobRoutes')
+//+++++++++++++++++++ END of Routes+++++++++++++++++++++++++++++++++
 
 const connect = require('./db/connect')
 
@@ -20,6 +25,7 @@ const notFoundMiddleware = require('./middleware/NotFound')
 const app = express()
 
 //++++++++++++++++++++++++ MIDDLEWARE +++++++++++++++++++++++
+app.use(fileUpload())
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_LIFETIME))
 
@@ -31,6 +37,8 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/jobhunt/auth', AuthRoute)
 app.use('/api/v1/jobhunt/users', UserRoute)
+app.use('/api/v1/jobhunt/jobs', JobRoutes)
+app.use('/api/v1/jobhunt/applied', AppliedJobRoutes)
 
 //++++++++++++++++++++++++ Error Handler MIDDLEWARE +++++++++++++++++++++++
 app.use(ErrorHandlerMiddleware)

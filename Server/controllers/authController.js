@@ -1,7 +1,7 @@
 const User = require('../models/User')
 const CustomApiError = require('../errors')
 const { StatusCodes } = require('http-status-codes')
-const { attachCookiesToResponse, createJWT } = require('../utils')
+const { attachCookiesToResponse, createTokenUser } = require('../utils')
 
 const registerUser = async (req, res) => {
   const { firstName, lastName, email, phoneNumber, location, password } =
@@ -22,7 +22,7 @@ const registerUser = async (req, res) => {
     password,
     role,
   })
-  const tokenUser = { user: user.email, userId: user._id, role: user.role }
+  const tokenUser = createTokenUser(user)
 
   attachCookiesToResponse({ res, user: tokenUser })
 
@@ -46,7 +46,7 @@ const loginUser = async (req, res) => {
   if (!isPasswordMatch) {
     throw new CustomApiError.BadRequestError('Incorrect passord')
   }
-  const tokenUser = { user: user.email, userId: user._id, role: user.role }
+  const tokenUser = createTokenUser(user)
 
   attachCookiesToResponse({ res, user: tokenUser })
 
