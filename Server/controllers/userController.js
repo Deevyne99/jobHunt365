@@ -9,9 +9,44 @@ const {
 } = require('../utils')
 
 const getAllUsers = async (req, res) => {
-  console.log(req.user)
-  const users = await User.find({})
-  res.status(StatusCodes.OK).json({ success: true, count: users.length, users })
+  const { search, sort, role } = req.query
+
+  const queryObject = {}
+  if (search) {
+    queryObject.email = { $regex: search, $options: 'i' }
+  }
+  if (role && role !== 'all') {
+    queryObject.role = role
+  }
+
+  let result = User.find(queryObject)
+
+  if (sort === 'latest') {
+    result = result.sort('-createdAt')
+  }
+  if (sort === 'oldest') {
+    result = result.sort('createdAt')
+  }
+  if (sort === 'a-z') {
+    result = result.sort('firstName')
+  }
+  if (sort === 'z-a') {
+    result = result.sort('-firstName')
+  }
+
+  //pagination
+  const page = Number(req.query.page) || 1
+  const limit = Number(req.query.limit) || 10
+  const skip = (page - 1) * limit
+  result = result.skip(skip).limit(limit)
+
+  const users = await result
+  const totalUsers = await User.countDocuments(queryObject)
+  const numOfPages = Math.ceil(totalUsers / limit)
+
+  res
+    .status(StatusCodes.OK)
+    .json({ success: true, totalUsers, numOfPages, users })
 }
 
 const uploadAvatar = async (req, res) => {
