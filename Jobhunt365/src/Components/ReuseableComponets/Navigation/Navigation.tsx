@@ -4,7 +4,7 @@ import Avatar from '../Avatar/Avatar'
 
 const Navigation = () => {
   return (
-    <header className='flex flex-col py-4 bg-white '>
+    <header className='flex flex-col py-4 bg-white w-full '>
       <div className=' flex items-center justify-between mx-4 md:mx-8'>
         <h1 className='text-xl'>Jobhunt365</h1>
         <div className='flex gap-6  items-center'>
@@ -25,7 +25,7 @@ const Navigation = () => {
           </Link>
         </div>
         <div>
-          <Avatar firstName='Ebe' lastName='Lee' />
+          <Avatar firstName='Ude' lastName='banks' />
         </div>
       </div>
     </header>

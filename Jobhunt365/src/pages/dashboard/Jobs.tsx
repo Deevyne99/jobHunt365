@@ -5,12 +5,23 @@ import Navigation from '../../Components/ReuseableComponets/Navigation/Navigatio
 
 const Jobs = () => {
   return (
-    <div className='h-screen'>
+    <div className='flex flex-col w-full '>
       <div>
         <Navigation />
       </div>
-      <div className='mt-4  flex gap-4'>
-        <JobCard />
+      <div className='flex gap-4 '>
+        <div className='flex w-[20%] bg-white mt-4'></div>
+        <div className='mt-4 w-[60%]  2xl:ml-4  grid 2xl:grid-cols-4 lg:grid-cols-2 gap-4 justify-center items-center '>
+          <JobCard />
+          <JobCard />
+          <JobCard />
+          <JobCard />
+          <JobCard />
+          <JobCard />
+          <JobCard />
+          <JobCard />
+        </div>
+        <div className=' flex w-[20%] bg-white ml-auto mt-4'></div>
       </div>
     </div>
   )
