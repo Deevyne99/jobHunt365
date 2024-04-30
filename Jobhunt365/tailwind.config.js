@@ -7,6 +7,7 @@ export default {
       'gray-100': '#d1d5db',
       'light-blue': '#2563eb',
       white: '#fff',
+      red: '#f87171',
     },
   },
   plugins: [],

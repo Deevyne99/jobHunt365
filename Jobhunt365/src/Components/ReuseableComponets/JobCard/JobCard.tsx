@@ -10,7 +10,7 @@ import google from '../../../assets/google.png'
 
 const JobCard = () => {
   return (
-    <div className='flex flex-col bg-white p-4 w-[350px] max-w-[400px]  rounded-md shadow-sm'>
+    <div className='flex flex-col bg-white p-4 w-full max-w-[400px]  rounded-md shadow-sm'>
       <div className='flex justify-between items-start border-b border-b-gray-100 pb-4'>
         <div className='flex items-center gap-4 w-full'>
           <LogoComponent company='zoogle' imageUrl={google} />
