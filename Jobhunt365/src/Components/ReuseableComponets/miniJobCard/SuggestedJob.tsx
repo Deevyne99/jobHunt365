@@ -9,49 +9,51 @@ import {
 } from 'react-icons/fa6'
 const SuggestedJob = () => {
   return (
-    <div className='flex flex-col w-full bg-white h-[200px] p-4 rounded-md'>
+    <div className='flex flex-col w-[95%] bg-white h-[200px] p-4 rounded-md'>
       <div className='flex justify-between items-center'>
         <div className='flex items-center gap-2 w-full'>
           <LogoComponent company='zoogle' imageUrl={google} />
-          <h1 className='text-md font-bold'>Goldman Sach</h1>
+          <h1 className='text-md font-bold text-[#4b5563] truncate'>
+            Goldman Sach
+          </h1>
         </div>
         <button>
-          <FaEllipsisVertical className='text-gray-100 text-xl' />
+          <FaEllipsisVertical className='text-gray-100 text-xl ' />
         </button>
       </div>
-      <div className='flex flex-col mt-4'>
-        <h2 className='font-bold text-sm  max-w-[270px]'>
+      <div className='flex flex-col mt-2'>
+        <h2 className='truncate max-w-[270px] text-sm text-[#94a3b8]'>
           Senior Frontend Developer
         </h2>
       </div>
       <div className='flex items-center mt-4 justify-between'>
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-[6px] items-center'>
           <div>
-            <FaBriefcase />
+            <FaBriefcase className=' text-[#60a5fa]' />
           </div>
-          <p className='text-sm'>Full-Time</p>
+          <p className='text-sm text-[#6b7280]'>Full-Time</p>
         </div>
 
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-[6px] items-center'>
           <div>
-            <FaRegCalendarDays />
+            <FaRegCalendarDays className='text-[#fb923c]' />
           </div>
-          <p className='text-sm'>20th July,2024</p>
+          <p className='text-sm text-[#6b7280]'>20th July,2024</p>
         </div>
       </div>
 
       <div className='flex items-center mt-4 justify-between '>
-        <div className='flex gap-2 items-center  '>
+        <div className='flex gap-[6px] items-center  '>
           <div>
-            <FaLocationDot />
+            <FaLocationDot className='text-[#f87171]' />
           </div>
-          <p className='text-sm'>Nigeria</p>
+          <p className='text-sm text-[#6b7280]'>Nigeria</p>
         </div>
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-[6px] items-center'>
           <div>
-            <FaLocationArrow />
+            <FaLocationArrow className='text-[#4ade80]' />
           </div>
-          <p className='text-sm'>Remote</p>
+          <p className='text-sm text-[#6b7280]'>Remote</p>
         </div>
       </div>
     </div>

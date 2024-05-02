@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import LogoComponent from '../LogoComponent/LogoComponent'
 import {
   FaEllipsisVertical,
@@ -9,16 +10,17 @@ import {
 import google from '../../../assets/google.png'
 
 const JobCard = () => {
+  const [status, setStatus] = useState('Declined')
   return (
     <div className='flex flex-col bg-white p-4 w-full max-w-[400px]  rounded-md shadow-sm'>
       <div className='flex justify-between items-start border-b border-b-gray-100 pb-4'>
         <div className='flex items-center gap-4 w-full'>
-          <LogoComponent company='zoogle' imageUrl={google} />
+          <LogoComponent company='xoogle' imageUrl={google} />
           <div className='flex flex-col '>
-            <h2 className='font-bold  max-w-[270px]'>
+            <h2 className='font-bold text-[#4b5563]  max-w-[270px]'>
               Senior Frontend Developer
             </h2>
-            <p className='text-sm'>Goldman Sach</p>
+            <p className='text-sm text-[#94a3b8]'>Goldman Sach</p>
           </div>
         </div>
         <button>
@@ -28,39 +30,49 @@ const JobCard = () => {
       <div className='flex items-center mt-4 justify-between'>
         <div className='flex gap-2 items-center'>
           <div>
-            <FaBriefcase />
+            <FaBriefcase className=' text-[#60a5fa]' />
           </div>
-          <p>Full-Time</p>
+          <p className='text-sm text-[#6b7280]'>Full-Time</p>
         </div>
 
         <div className='flex gap-2 items-center'>
           <div>
-            <FaRegCalendarDays />
+            <FaRegCalendarDays className='text-[#fb923c]' />
           </div>
-          <p>20th July,2024</p>
+          <p className='text-sm text-[#6b7280]'>20th July,2024</p>
         </div>
       </div>
       <div className='flex items-center mt-4 justify-between '>
         <div className='flex gap-2 items-center  '>
           <div>
-            <FaLocationDot />
+            <FaLocationDot className='text-[#f87171]' />
           </div>
-          <p>Nigeria</p>
+          <p className='text-sm text-[#6b7280]'>Nigeria</p>
         </div>
         <div className='flex gap-2 items-center'>
           <div>
-            <FaLocationArrow />
+            <FaLocationArrow className='text-[#4ade80]' />
           </div>
-          <p>Remote</p>
+          <p className='text-sm text-[#6b7280]'>Remote</p>
         </div>
       </div>
       <div className='flex items-center mt-4 justify-between'>
         <div className='flex gap-1 items-center'>
-          <p>$20K-40K/year</p>
+          <p className='text-sm text-[#6b7280]'>$20K-40K/year</p>
         </div>
         <div className='flex gap-1 items-center'>
-          <p className='p-1 rounded-md bg-[#fff7ed] text-[#c2410c] font-500'>
-            Pending
+          <p
+            className={`p-1 rounded-md text-sm ${
+              status === 'Pending'
+                ? 'bg-[#fff7ed] text-[#ea580c]'
+                : status === 'Interview'
+                ? 'bg-[#fefce8] text-[#ca8a04]'
+                : status === 'Declined'
+                ? 'bg-[#fef2f2] text-[#dc2626]'
+                : 'bg-[#f0fdf4] text-[#16a34a]'
+            }  font-500`}
+          >
+            {status}
           </p>
         </div>
       </div>

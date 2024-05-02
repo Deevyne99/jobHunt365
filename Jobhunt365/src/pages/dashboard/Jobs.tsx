@@ -6,11 +6,11 @@ import SuggestedJob from '../../Components/ReuseableComponets/miniJobCard/Sugges
 
 const Jobs = () => {
   return (
-    <div className='flex flex-col w-full '>
+    <div className='flex flex-col w-full  '>
       <div>
         <Navigation />
       </div>
-      <div className='flex w-full  '>
+      <div className='flex w-full  px-8'>
         <div className='flex  w-[20%] bg-white mt-4 h-[700px]'></div>
         <div className='mt-4 w-[60%]  grid 2xl:grid-cols-3 lg:grid-cols-2 gap-4 justify-center items-center mx-4 px-4 '>
           <JobCard />
@@ -23,7 +23,7 @@ const Jobs = () => {
           <JobCard />
         </div>
 
-        <div className=' flex  flex-col gap-4 w-[20%]  ml-auto mt-4'>
+        <div className=' flex  flex-col gap-4 w-[20%]  mt-4'>
           <SuggestedJob />
           <SuggestedJob />
           <SuggestedJob />
