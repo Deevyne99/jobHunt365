@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa6'
 const SuggestedJob = () => {
   return (
-    <div className='flex flex-col w-[95%] bg-white h-[200px] p-4 rounded-md'>
+    <div className='flex flex-col w-full bg-white h-[200px] p-4 rounded-md'>
       <div className='flex justify-between items-center'>
         <div className='flex items-center gap-2 w-full'>
           <LogoComponent company='zoogle' imageUrl={google} />

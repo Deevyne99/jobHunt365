@@ -10,7 +10,7 @@ import {
 import google from '../../../assets/google.png'
 
 const JobCard = () => {
-  const [status, setStatus] = useState('Declined')
+  const [status, setStatus] = useState('Pending')
   return (
     <div className='flex flex-col bg-white p-4 w-full max-w-[400px]  rounded-md shadow-sm'>
       <div className='flex justify-between items-start border-b border-b-gray-100 pb-4'>
@@ -62,7 +62,7 @@ const JobCard = () => {
         </div>
         <div className='flex gap-1 items-center'>
           <p
-            className={`p-1 rounded-md text-sm ${
+            className={`p-1 rounded-md text-sm font-bold ${
               status === 'Pending'
                 ? 'bg-[#fff7ed] text-[#ea580c]'
                 : status === 'Interview'
@@ -70,7 +70,7 @@ const JobCard = () => {
                 : status === 'Declined'
                 ? 'bg-[#fef2f2] text-[#dc2626]'
                 : 'bg-[#f0fdf4] text-[#16a34a]'
-            }  font-500`}
+            }  `}
           >
             {status}
           </p>

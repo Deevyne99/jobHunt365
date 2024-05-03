@@ -4,7 +4,7 @@ import Avatar from '../Avatar/Avatar'
 
 const Navigation = () => {
   return (
-    <header className='flex flex-col py-4 bg-white w-full '>
+    <header className='flex fixed z-10  flex-col py-2 bg-white w-full shadow-sm'>
       <div className=' flex items-center justify-between mx-4 md:mx-8'>
         <h1 className='text-xl'>Jobhunt365</h1>
         <div className='flex gap-6  items-center'>
