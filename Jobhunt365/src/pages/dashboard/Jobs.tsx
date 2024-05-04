@@ -11,11 +11,11 @@ const Jobs = () => {
       <div>
         <Navigation />
       </div>
-      <div className='flex w-full  px-8 mt-16 '>
-        <div className='flex  w-[20%] p-2 mt-4 '>
+      <div className='flex w-full px-2 xl:px-8 mt-16 '>
+        <div className='hidden md:flex md:w-[30%]  xl:w-[20%] p-2 mt-4 '>
           <FilterComponent />
         </div>
-        <div className=' w-[60%] mt-4  flex flex-col mx-4 px-4 max-h-screen overflow-y-scroll mb-4'>
+        <div className=' xl:w-[60%] w-full md:w-[80%] mt-4  flex flex-col  px-4 max-h-screen overflow-y-scroll mb-4'>
           <div className='flex items-center gap-4 '>
             <input
               type='text'
@@ -25,7 +25,7 @@ const Jobs = () => {
               search
             </button>
           </div>
-          <div className='mt-4  grid 2xl:grid-cols-3 lg:grid-cols-2 gap-4 justify-center items-center  '>
+          <div className='mt-4  grid 2xl:grid-cols-3 sm:grid-cols-2  grid-cols-1  gap-4 justify-center items-center  md:mx-2 mx-0'>
             <JobCard />
             <JobCard />
             <JobCard />
@@ -37,7 +37,7 @@ const Jobs = () => {
           </div>
         </div>
 
-        <div className=' flex  flex-col gap-4 w-[20%]  mt-4 max-h-screen overflow-y-scroll p-2'>
+        <div className='hidden xl:flex  flex-col gap-4 w-[20%]  mt-4 max-h-screen overflow-y-scroll p-2'>
           <div
             className='flex w-full p-4 rounded-md bg-white items-center gap-4
           '
