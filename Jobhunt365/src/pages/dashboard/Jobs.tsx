@@ -2,7 +2,8 @@ import FilterComponent from '../../Components/ReuseableComponets/FilterComponent
 import JobCard from '../../Components/ReuseableComponets/JobCard/JobCard'
 import Navigation from '../../Components/ReuseableComponets/Navigation/Navigation'
 import SuggestedJob from '../../Components/ReuseableComponets/miniJobCard/SuggestedJob'
-import { FaGlobe } from 'react-icons/fa6'
+import { FaGlobe, FaSliders, FaSistrix } from 'react-icons/fa6'
+
 // import React from 'react'
 
 const Jobs = () => {
@@ -15,14 +16,17 @@ const Jobs = () => {
         <div className='hidden md:flex md:w-[30%]  xl:w-[20%] p-2 mt-4 '>
           <FilterComponent />
         </div>
-        <div className=' xl:w-[60%] w-full md:w-[80%] mt-4  flex flex-col  px-4 max-h-screen overflow-y-scroll mb-4'>
-          <div className='flex items-center gap-4 '>
+        <div className=' xl:w-[60%]  w-full md:w-[80%] mt-4  flex flex-col  md:px-4 px-2 max-h-screen overflow-y-scroll mb-4'>
+          <div className='flex items-center gap-4 justify-center'>
+            <button className='text-[#60a5fa]  text-lg capitalize bg-white p-2 rounded-md cursor-pointer md:hidden flex'>
+              <FaSliders />
+            </button>
             <input
               type='text'
-              className='w-[85%] p-2 border-gray-100 focus:border-[#3b82f6] outline-none  rounded-md border'
+              className='md:w-[90%] w-full p-2 border-gray-100 focus:border-[#3b82f6] outline-none  rounded-md border'
             />
-            <button className='w-[15%] text-white capitalize bg-light-blue p-2 rounded-md cursor-pointer'>
-              search
+            <button className='text-[#60a5fa]  text-lg capitalize bg-white p-2 rounded-md cursor-pointer'>
+              <FaSistrix className='font-bold text-lg' />
             </button>
           </div>
           <div className='mt-4  grid 2xl:grid-cols-3 sm:grid-cols-2  grid-cols-1  gap-4 justify-center items-center  md:mx-2 mx-0'>
