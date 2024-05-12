@@ -6,15 +6,17 @@ const FilterComponent = () => {
   const [isJobLocation, setJobLocation] = useState(false)
   const [status, setStatus] = useState(false)
   return (
-    <section className='w-full p-2 max-h-screen overflow-y-scroll'>
-      <aside className='p-4 flex flex-col w-full gap-6 bg-white rounded-md '>
+    <section className='w-full  p-2 max-h-screen overflow-y-scroll'>
+      <aside className='p-4 flex flex-col w-full min-h-screen gap-6 bg-white rounded-md '>
         <div className='flex items-center justify-between  w-full'>
-          <h2 className='capitalize text-sm text-[#6b7280] font-bold'>
-            Filters
-          </h2>
           <button className='text-sm text-[#3b82f6] font-semibold'>
             Clear All
           </button>
+        </div>
+        <div>
+          <h2 className='capitalize text-md text-[#6b7280] font-bold'>
+            Filters
+          </h2>
         </div>
         <div className='flex flex-col gap-2'>
           <h3 className='capitalize text-sm text-[#6b7280] font-semibold'>
@@ -180,6 +182,39 @@ const FilterComponent = () => {
               </div>
             </div>
           )}
+        </div>
+        <div className='flex flex-col gap-4'>
+          <h2 className='capitalize text-md text-[#6b7280] font-bold'>Sort</h2>
+          <div className='flex gap-3 items-center'>
+            <input type='checkbox' name='a-z' id='' />
+            <label className='text-sm text-[#6b7280] capitalize' htmlFor='a-z'>
+              A-Z
+            </label>
+          </div>
+          <div className='flex gap-3 items-center'>
+            <input type='checkbox' name='z-a' id='' />
+            <label className='text-sm text-[#6b7280] capitalize' htmlFor='z-a'>
+              Z-A
+            </label>
+          </div>
+          <div className='flex gap-3 items-center'>
+            <input type='checkbox' name='latest' id='' />
+            <label
+              className='text-sm text-[#6b7280] capitalize'
+              htmlFor='latest'
+            >
+              latest
+            </label>
+          </div>
+          <div className='flex gap-3 items-center'>
+            <input type='checkbox' name='oldest' id='' />
+            <label
+              className='text-sm text-[#6b7280] capitalize'
+              htmlFor='oldest'
+            >
+              oldest
+            </label>
+          </div>
         </div>
       </aside>
     </section>

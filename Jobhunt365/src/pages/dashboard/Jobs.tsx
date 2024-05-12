@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import FilterComponent from '../../Components/ReuseableComponets/FilterComponent/FilterComponent'
+import SmallFilterComponent from '../../Components/ReuseableComponets/FilterComponent/smallFilterComponent/SmallFilterComponent'
 import JobCard from '../../Components/ReuseableComponets/JobCard/JobCard'
 import Navigation from '../../Components/ReuseableComponets/Navigation/Navigation'
 import SuggestedJob from '../../Components/ReuseableComponets/miniJobCard/SuggestedJob'
@@ -7,8 +9,15 @@ import { FaGlobe, FaSliders, FaSistrix } from 'react-icons/fa6'
 // import React from 'react'
 
 const Jobs = () => {
+  const [openFilter, setOpenFilter] = useState(true)
+  const handleOpenFilter = () => setOpenFilter(!openFilter)
   return (
-    <div className='flex flex-col w-full  '>
+    <div className='flex flex-col w-full  relative'>
+      <SmallFilterComponent
+        openFilter={openFilter}
+        handleOpenFilter={handleOpenFilter}
+      />
+
       <div>
         <Navigation />
       </div>
@@ -18,7 +27,10 @@ const Jobs = () => {
         </div>
         <div className=' xl:w-[60%]  w-full md:w-[80%] mt-4  flex flex-col  md:px-4 px-2 max-h-screen overflow-y-scroll mb-4'>
           <div className='flex items-center gap-4 justify-center'>
-            <button className='text-[#60a5fa]  text-lg capitalize bg-white p-2 rounded-md cursor-pointer md:hidden flex'>
+            <button
+              className='text-[#60a5fa]  text-lg capitalize bg-white p-2 rounded-md cursor-pointer md:hidden flex'
+              onClick={() => handleOpenFilter()}
+            >
               <FaSliders />
             </button>
             <input
