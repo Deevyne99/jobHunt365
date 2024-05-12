@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Navbar from './Components/Navbar'
 import Error from './pages/Error'
 import Jobs from './pages/dashboard/Jobs'
+import Stats from './pages/dashboard/Stats'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/jobs' element={<Jobs />} />
+          <Route path='/stat' element={<Stats />} />
         </Routes>
       </BrowserRouter>
     </div>

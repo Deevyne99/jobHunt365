@@ -17,7 +17,7 @@ const SmallFilterComponent = ({
     <div
       className={` ${
         openFilter
-          ? 'fixed h-full z-0 w-full bg-[#000] bg-opacity-5 backdrop-blur '
+          ? 'flex md:hidden fixed h-full z-0 w-full bg-[#000] bg-opacity-5 backdrop-blur '
           : 'w-0  z-0'
       }`}
     >
