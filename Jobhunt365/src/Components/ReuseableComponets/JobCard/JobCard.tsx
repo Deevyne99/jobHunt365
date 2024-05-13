@@ -64,7 +64,7 @@ const JobCard = () => {
           <p
             className={`p-1 rounded-md text-sm font-bold ${
               status === 'Pending'
-                ? 'bg-[#fff7ed] text-[#ea580c]'
+                ? 'bg-[#f0f9ff] text-[#0284c7]'
                 : status === 'Interview'
                 ? 'bg-[#fefce8] text-[#ca8a04]'
                 : status === 'Declined'
