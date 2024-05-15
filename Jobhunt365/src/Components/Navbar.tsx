@@ -5,7 +5,7 @@ Outlet
 
 const Navbar = () => {
   return (
-    <header className='flex flex-col mx-4 md:mx-16'>
+    <header className='flex flex-col mx-4 md:mx-16 bg-white'>
       <nav className='flex justify-between '>
         <h1>logo</h1>
         <ul className='flex items-center gap-4'>

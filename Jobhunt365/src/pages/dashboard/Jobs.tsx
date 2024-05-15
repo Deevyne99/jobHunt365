@@ -12,20 +12,20 @@ const Jobs = () => {
   const [openFilter, setOpenFilter] = useState(true)
   const handleOpenFilter = () => setOpenFilter(!openFilter)
   return (
-    <div className='flex flex-col w-full  relative'>
+    <div className='flex flex-col w-full  relative '>
+      <div>
+        <Navigation />
+      </div>
       <SmallFilterComponent
         openFilter={openFilter}
         handleOpenFilter={handleOpenFilter}
       />
 
-      <div>
-        <Navigation />
-      </div>
-      <div className='flex w-full px-2 xl:px-8 mt-16 '>
+      <div className='flex w-full px-2 xl:px-8  '>
         <div className='hidden md:flex md:w-[30%]  xl:w-[20%] p-2 mt-4 '>
           <FilterComponent />
         </div>
-        <div className=' xl:w-[60%]  w-full md:w-[80%] mt-4  flex flex-col  md:px-4 px-2 max-h-screen overflow-y-scroll mb-4'>
+        <div className=' xl:w-[60%]  w-full md:w-[80%] mt-6  flex flex-col  md:px-4 px-2 max-h-screen overflow-y-scroll mb-4'>
           <div className='flex items-center gap-4 justify-center'>
             <button
               className='text-[#60a5fa]  text-lg capitalize bg-white p-2 rounded-md cursor-pointer md:hidden flex'
