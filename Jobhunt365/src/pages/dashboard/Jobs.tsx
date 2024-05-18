@@ -9,7 +9,7 @@ import { FaGlobe, FaSliders, FaSistrix } from 'react-icons/fa6'
 // import React from 'react'
 
 const Jobs = () => {
-  const [openFilter, setOpenFilter] = useState(true)
+  const [openFilter, setOpenFilter] = useState(false)
   const handleOpenFilter = () => setOpenFilter(!openFilter)
   return (
     <div className='flex flex-col w-full  relative '>
@@ -21,7 +21,7 @@ const Jobs = () => {
         handleOpenFilter={handleOpenFilter}
       />
 
-      <div className='flex w-full px-2 xl:px-8  '>
+      <div className='flex w-full px-2 xl:px-8  mt-16'>
         <div className='hidden md:flex md:w-[30%]  xl:w-[20%] p-2 mt-4 '>
           <FilterComponent />
         </div>
