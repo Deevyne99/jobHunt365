@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar'
 import Error from './pages/Error'
 import Jobs from './pages/dashboard/Jobs'
 import Stats from './pages/dashboard/Stats'
+import Applications from './pages/dashboard/Applications'
 // import Navigation from './Components/ReuseableComponets/Navigation/Navigation'
 // import { useEffect } from 'react'
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/dashboard/jobs' element={<Jobs />} />
+        <Route path='/dashboard/applications' element={<Applications />} />
         <Route path='/dashboard/stat' element={<Stats />} />
       </Routes>
     </BrowserRouter>

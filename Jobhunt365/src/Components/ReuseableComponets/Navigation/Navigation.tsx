@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import Avatar from '../Avatar/Avatar'
 import { useState } from 'react'
 import { FiX } from 'react-icons/fi'
+import { FaAlignRight } from 'react-icons/fa'
+import { data } from '../../../data'
+
 const Navigation = () => {
   const [openNav, setOpenNav] = useState(true)
   return (
@@ -11,32 +14,25 @@ const Navigation = () => {
         <div className=' flex items-center py-2 justify-between mx-4 md:mx-8'>
           <div className='flex'>
             <h1 className='text-xl hidden md:flex'>Jobhunt365</h1>
-            <button className='flex md:hidden' onClick={() => setOpenNav(true)}>
-              open
+            <button
+              className='flex md:hidden text-[#6b7280]'
+              onClick={() => setOpenNav(true)}
+            >
+              <FaAlignRight />
             </button>
           </div>
           <div className='hidden md:flex gap-6  items-center'>
-            <Link
-              className='capitalize hover:text-light-blue'
-              to={'/dashboard/jobs'}
-            >
-              jobs
-            </Link>
-            <Link
-              className='capitalize hover:text-light-blue'
-              to={'/applications'}
-            >
-              Applications
-            </Link>
-            <Link
-              className='capitalize hover:text-light-blue'
-              to={'/dashboard/stat'}
-            >
-              Stat
-            </Link>
-            <Link className='capitalize hover:text-light-blue' to={'/profile'}>
-              Profile
-            </Link>
+            {data.map((item) => {
+              return (
+                <Link
+                  className='capitalize hover:text-light-blue flex gap-2 items-center text-[#6b7280]'
+                  to={item.url}
+                  key={item.id}
+                >
+                  <item.icon /> {item.name}
+                </Link>
+              )
+            })}
           </div>
           <div>
             <Avatar firstName='Ude' lastName='banks' />
@@ -59,27 +55,17 @@ const Navigation = () => {
             <FiX />
           </button>
           <div className='flex flex-col gap-6  mt-8'>
-            <Link
-              className='capitalize hover:text-light-blue'
-              to={'/dashboard/jobs'}
-            >
-              jobs
-            </Link>
-            <Link
-              className='capitalize hover:text-light-blue'
-              to={'/applications'}
-            >
-              Applications
-            </Link>
-            <Link
-              className='capitalize hover:text-light-blue'
-              to={'/dashboard/stat'}
-            >
-              Stat
-            </Link>
-            <Link className='capitalize hover:text-light-blue' to={'/profile'}>
-              Profile
-            </Link>
+            {data.map((item) => {
+              return (
+                <Link
+                  className='capitalize text-[#6b7280] hover:text-light-blue flex gap-2 items-center'
+                  to={item.url}
+                  key={item.id}
+                >
+                  <item.icon /> {item.name}
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>
