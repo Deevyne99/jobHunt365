@@ -7,7 +7,7 @@ import { FaAlignRight } from 'react-icons/fa'
 import { data } from '../../../data'
 
 const Navigation = () => {
-  const [openNav, setOpenNav] = useState(true)
+  const [openNav, setOpenNav] = useState(false)
   return (
     <header className='flex fixed z-10 h-[60px] flex-col  bg-white w-full shadow-sm'>
       <div className='flex flex-col'>
@@ -49,7 +49,7 @@ const Navigation = () => {
         <div
           className={` transform duration-300 ${
             openNav ? 'translate-y-0' : 'translate-y-[-500px]'
-          } fixed flex-col flex md:hidden top-20 bg-white p-4 left-0 right-0 mx-auto sm:w-[450px] w-[90%] h-[300px] `}
+          } fixed flex-col flex md:hidden top-20 bg-white p-4 left-0 right-0 mx-auto sm:w-[450px] w-[90%] h-[300px] shadow-lg`}
         >
           <button className='flex ml-auto' onClick={() => setOpenNav(!openNav)}>
             <FiX />
@@ -61,6 +61,7 @@ const Navigation = () => {
                   className='capitalize text-[#6b7280] hover:text-light-blue flex gap-2 items-center'
                   to={item.url}
                   key={item.id}
+                  onClick={() => setOpenNav(false)}
                 >
                   <item.icon /> {item.name}
                 </Link>

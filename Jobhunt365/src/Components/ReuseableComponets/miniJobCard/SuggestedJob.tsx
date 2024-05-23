@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa6'
 const SuggestedJob = () => {
   return (
-    <div className='flex flex-col w-full bg-white h-[200px] p-4 rounded-md'>
+    <div className='flex flex-col w-full bg-white h-[250px] p-4 rounded-md'>
       <div className='flex justify-between items-center'>
         <div className='flex items-center gap-2 w-full'>
           <LogoComponent company='zoogle' imageUrl={google} />
@@ -56,6 +56,9 @@ const SuggestedJob = () => {
           <p className='text-sm text-[#6b7280]'>Remote</p>
         </div>
       </div>
+      <button className='p-2 mt-4 bg-[#60a5fa] text-white font-semibold rounded-md w-[100px]'>
+        Apply
+      </button>
     </div>
   )
 }
