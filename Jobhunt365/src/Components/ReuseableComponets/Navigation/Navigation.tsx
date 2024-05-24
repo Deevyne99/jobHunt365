@@ -25,7 +25,7 @@ const Navigation = () => {
             {data.map((item) => {
               return (
                 <Link
-                  className='capitalize hover:text-light-blue flex gap-2 items-center text-[#6b7280]'
+                  className='capitalize hover:text-[#60a5fa] flex gap-2 items-center text-[#6b7280]'
                   to={item.url}
                   key={item.id}
                 >
@@ -58,7 +58,7 @@ const Navigation = () => {
             {data.map((item) => {
               return (
                 <Link
-                  className='capitalize text-[#6b7280] hover:text-light-blue flex gap-2 items-center'
+                  className='capitalize text-[#6b7280] hover:text-[#60a5fa] flex gap-2 items-center'
                   to={item.url}
                   key={item.id}
                   onClick={() => setOpenNav(false)}

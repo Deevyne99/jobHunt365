@@ -37,7 +37,7 @@ const Applications = () => {
               type='text'
               className='md:w-[90%] w-full p-2 border-gray-100 focus:border-[#3b82f6] outline-none  rounded-md border'
             />
-            <button className='text-[#60a5fa]  text-lg capitalize bg-white p-2 rounded-md cursor-pointer'>
+            <button className='text-white  text-lg capitalize bg-[#60a5fa] p-2 rounded-md cursor-pointer'>
               <FaSistrix className='font-bold text-lg' />
             </button>
           </div>
@@ -53,7 +53,7 @@ const Applications = () => {
           </div>
         </div>
 
-        <div className='hidden xl:flex  flex-col gap-4 w-[20%]  mt-4 max-h-screen overflow-y-scroll p-2'>
+        <div className='hidden xl:flex  flex-col gap-4 w-[20%]  mt-4 max-h-screen overflow-y-scroll p-2 '>
           <div
             className='flex w-full p-4 rounded-md bg-white items-center gap-4
           '

@@ -7,7 +7,7 @@ type StatusProps = {
 const AnalyticsCard = ({ status }: StatusProps) => {
   return (
     <div
-      className={`flex flex-col gap-4 w-full  bg-white p-4 rounded-md border-b-8 ${
+      className={`flex flex-col gap-4 w-full h-[180px]  bg-white p-4 rounded-md border-b-8 ${
         status === 'Pending'
           ? ' border-b-[#ea580c]'
           : status === 'Interview'

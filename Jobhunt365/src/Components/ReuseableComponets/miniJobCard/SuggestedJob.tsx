@@ -56,7 +56,7 @@ const SuggestedJob = () => {
           <p className='text-sm text-[#6b7280]'>Remote</p>
         </div>
       </div>
-      <button className='p-2 mt-4 bg-[#60a5fa] text-white font-semibold rounded-md w-[100px]'>
+      <button className='p-2 flex justify-center items-center mt-4 bg-[#60a5fa] text-white font-semibold rounded-md w-[100px]'>
         Apply
       </button>
     </div>

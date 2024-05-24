@@ -28,7 +28,7 @@ const Applications = () => {
         <div className=' xl:w-[60%]  w-full md:w-[80%] mt-6  flex flex-col  md:px-4 px-2 max-h-screen overflow-y-scroll mb-4'>
           <div className='flex items-center gap-4 justify-center'>
             <button
-              className='text-[#60a5fa]  text-lg capitalize bg-white p-2 rounded-md cursor-pointer md:hidden flex'
+              className='bg-[#60a5fa]  text-lg capitalize text-white p-2 rounded-md cursor-pointer md:hidden flex'
               onClick={() => handleOpenFilter()}
             >
               <FaSliders />
@@ -37,7 +37,7 @@ const Applications = () => {
               type='text'
               className='md:w-[90%] w-full p-2 border-gray-100 focus:border-[#3b82f6] outline-none  rounded-md border'
             />
-            <button className='text-[#60a5fa]  text-lg capitalize bg-white p-2 rounded-md cursor-pointer'>
+            <button className='text-white  text-lg capitalize bg-[#60a5fa] p-2 rounded-md cursor-pointer'>
               <FaSistrix className='font-bold text-lg' />
             </button>
           </div>
