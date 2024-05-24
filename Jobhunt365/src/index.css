@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 5px; /* Adjust this value to make the scrollbar thinner or thicker */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0; /* Adjust the color as needed */
+}
+
+html,
+body,
+#root {
+  @apply h-full;
+  @apply overflow-auto; /* Ensure overflow is not hidden */
+}
+
+@layer base {
+  body {
+    @apply bg-[#f5f7fb]; /* Replace with any Tailwind color class */
+  }
+}
