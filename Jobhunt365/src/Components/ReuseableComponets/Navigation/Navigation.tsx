@@ -9,7 +9,7 @@ import { data } from '../../../data'
 const Navigation = () => {
   const [openNav, setOpenNav] = useState(false)
   return (
-    <header className='flex fixed z-10 h-[60px] flex-col  bg-white w-full shadow-sm'>
+    <header className='flex fixed z-20 h-[60px] flex-col  bg-white w-full shadow-sm'>
       <div className='flex flex-col'>
         <div className=' flex items-center py-2 justify-between mx-4 md:mx-8'>
           <div className='flex'>
