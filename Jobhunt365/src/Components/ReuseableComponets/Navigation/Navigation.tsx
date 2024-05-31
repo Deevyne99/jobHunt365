@@ -4,6 +4,7 @@ import Avatar from '../Avatar/Avatar'
 import { useState } from 'react'
 import { FiX } from 'react-icons/fi'
 import { FaAlignRight } from 'react-icons/fa'
+import { FaChevronDown } from 'react-icons/fa6'
 import { data } from '../../../data'
 
 const Navigation = () => {
@@ -34,8 +35,9 @@ const Navigation = () => {
               )
             })}
           </div>
-          <div>
+          <div className='flex items-center gap-2 '>
             <Avatar firstName='Ude' lastName='banks' />
+            <FaChevronDown className='text-[#6b7280] text-sm' />
           </div>
         </div>
       </div>

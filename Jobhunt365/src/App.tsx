@@ -7,6 +7,7 @@ import Error from './pages/Error'
 import Jobs from './pages/dashboard/Jobs'
 import Stats from './pages/dashboard/Stats'
 import Applications from './pages/dashboard/Applications'
+import Profile from './pages/dashboard/Profile'
 // import Navigation from './Components/ReuseableComponets/Navigation/Navigation'
 // import { useEffect } from 'react'
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/dashboard/jobs' element={<Jobs />} />
         <Route path='/dashboard/applications' element={<Applications />} />
         <Route path='/dashboard/stat' element={<Stats />} />
+        <Route path='/dashboard/profile' element={<Profile />} />
       </Routes>
     </BrowserRouter>
   )
