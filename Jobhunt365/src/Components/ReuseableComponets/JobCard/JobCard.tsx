@@ -11,8 +11,10 @@ import google from '../../../assets/google.png'
 
 const JobCard = () => {
   const [status, setStatus] = useState('Pending')
+  const [modal, setModal] = useState(false)
+
   return (
-    <div className='flex flex-col bg-white p-4 w-full  xl:max-w-[400px]  rounded-md shadow-sm'>
+    <div className='relative flex flex-col bg-white p-4 w-full  xl:max-w-[400px]  rounded-md shadow-sm'>
       <div className='flex justify-between items-start border-b border-b-gray-100 pb-4'>
         <div className='flex items-center gap-4 w-full'>
           <LogoComponent company='xoogle' imageUrl={google} />
@@ -23,7 +25,7 @@ const JobCard = () => {
             <p className='text-sm text-[#94a3b8]'>Goldman Sach</p>
           </div>
         </div>
-        <button>
+        <button onClick={() => setModal(!modal)}>
           <FaEllipsisVertical className='text-gray-100 text-xl' />
         </button>
       </div>
@@ -75,6 +77,14 @@ const JobCard = () => {
             {status}
           </p>
         </div>
+      </div>
+      <div
+        className={`flex flex-col gap-2 p-2  absolute top-12 rounded-md right-[-10px] transition-all duration-300 w-[130px] h-[80px] bg-white shadow-xl ${
+          modal ? ' ' : 'hidden'
+        }`}
+      >
+        <button>Edit</button>
+        <button>Delete</button>
       </div>
     </div>
   )
