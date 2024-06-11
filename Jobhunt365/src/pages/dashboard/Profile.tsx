@@ -88,7 +88,7 @@ const Profile = () => {
   return (
     <div className='flex flex-col '>
       <Navigation />
-      <div className='flex flex-col gap-4 mt-20 md:mt-24 mx-4 md:mx-8'>
+      <div className='flex flex-col gap-8 mt-20 md:mt-24 mx-4 md:mx-8 mb-8'>
         <div className='flex bg-white p-4 flex-col rounded-md '>
           <div className='flex flex-col md:flex-row justify-between'>
             <div className='flex gap-4  items-center '>
@@ -135,6 +135,24 @@ const Profile = () => {
                 )
               })
               .slice(0, 30)}
+          </div>
+        </div>
+        <div className='flex flex-col bg-white rounded-md p-4'>
+          <h1>Contact</h1>
+          <div className='mt-4 flex flex-col gap-2 text-[#475569] text-sm'>
+            <div className='flex gap-2'>
+              <p>Country :</p>
+              <p>Nigeria</p>
+            </div>
+            <div className='flex gap-2'>
+              <p>Phone Number :</p>
+
+              <p>08148158802</p>
+            </div>
+            <div className='flex gap-2'>
+              <p>Email :</p>
+              <p>kaludivine545@gmail.com</p>
+            </div>
           </div>
         </div>
       </div>

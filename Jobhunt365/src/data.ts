@@ -1,7 +1,7 @@
 import { FaBriefcase } from 'react-icons/fa6'
 import { FaPaperPlane, FaSignal, FaUser } from 'react-icons/fa'
 export const data = [
-  { name: 'jobs', url: '/dashboard/jobs', id: 1, icon: FaBriefcase },
+  { name: 'jobs', url: '/dashboard/', id: 1, icon: FaBriefcase },
   {
     name: 'Applications',
     url: '/dashboard/applications',
