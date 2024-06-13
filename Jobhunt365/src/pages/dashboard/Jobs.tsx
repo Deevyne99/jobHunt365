@@ -64,7 +64,7 @@ const Applications = () => {
             </div>
           </div>
 
-          <div className='hidden lg:flex flex-col gap-4 md:w-[30%] w-[20%] mt-4 max-h-screen overflow-y-scroll p-2'>
+          <div className='hidden lg:flex flex-col gap-4 md:w-[30%] lg:w-[20%] mt-4 max-h-screen overflow-y-scroll p-2'>
             <div className='flex w-full p-4 rounded-md bg-white items-center gap-4'>
               <div>
                 <FaGlobe className='text-[#60a5fa]' />
