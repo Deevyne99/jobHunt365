@@ -2,7 +2,7 @@ import { useState } from 'react'
 import FilterComponent from '../../Components/ReuseableComponets/FilterComponent/FilterComponent'
 import SmallFilterComponent from '../../Components/ReuseableComponets/FilterComponent/smallFilterComponent/SmallFilterComponent'
 import JobCard from '../../Components/ReuseableComponets/JobCard/JobCard'
-import Navigation from '../../Components/ReuseableComponets/Navigation/Navigation'
+
 import SuggestedJob from '../../Components/ReuseableComponets/miniJobCard/SuggestedJob'
 import { FaGlobe, FaSliders, FaSistrix } from 'react-icons/fa6'
 
@@ -13,9 +13,9 @@ const Applications = () => {
   const handleOpenFilter = () => setOpenFilter(!openFilter)
   return (
     <div className='flex flex-col w-full  relative '>
-      <div>
+      {/* <div>
         <Navigation />
-      </div>
+      </div> */}
       <SmallFilterComponent
         openFilter={openFilter}
         handleOpenFilter={handleOpenFilter}

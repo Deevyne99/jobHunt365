@@ -49,7 +49,7 @@ const BarChart = () => {
   }
 
   return (
-    <div className=' w-full mx-auto flex justify-center  py-8 p-4 rounded-lg h-[250px] bg-white md:h-[400px]'>
+    <div className=' w-full mx-auto flex justify-center  py-8 p-4 rounded-lg h-[250px] bg-white md:h-[400px] shadow-md'>
       <Bar data={data} options={options} />
     </div>
   )
