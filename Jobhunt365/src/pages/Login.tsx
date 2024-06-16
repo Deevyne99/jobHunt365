@@ -18,7 +18,7 @@ const Login = () => {
         </div>
 
         <div className='w-[90%]'>
-          <Button />
+          <Button label='Login' />
         </div>
         <div>
           <p className='text-center w-[270px]'>
