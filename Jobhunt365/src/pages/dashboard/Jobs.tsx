@@ -20,7 +20,7 @@ const Applications = () => {
   const toggleSidebar = () => setIsSidebarExpanded(!isSidebarExpanded)
 
   return (
-    <div className='flex flex-col w-full relative'>
+    <div className='flex flex-col w-full relative '>
       {/* <div>
         <Navigation />
       </div> */}
@@ -34,7 +34,7 @@ const Applications = () => {
           <div className='hidden md:flex md:w-[30%] xl:w-[20%] p-2 mt-4'>
             <FilterComponent />
           </div>
-          <div className='lg:w-[60%] w-full   mt-6 flex flex-col md:px-4 px-2 max-h-screen overflow-y-scroll mb-4'>
+          <div className='lg:w-[60%] w-full   mt-6 flex flex-col md:px-4 px-4 max-h-screen overflow-y-scroll mb-4'>
             <div className='flex items-center gap-4 justify-center'>
               <button
                 className='bg-[#60a5fa] text-lg capitalize text-white p-2 rounded-md cursor-pointer md:hidden flex'
