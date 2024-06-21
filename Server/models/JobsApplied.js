@@ -29,6 +29,10 @@ const AppliedJob = new mongoose.Schema(
       type: String,
       required: false,
     },
+    logo: {
+      type: String,
+      required: false,
+    },
     status: {
       type: String,
       enum: ['Pending', 'Interview', 'Declined', 'Accepted'],
