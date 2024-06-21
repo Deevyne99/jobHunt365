@@ -48,7 +48,7 @@ const Register = () => {
           <InputComponent label='password' />
         </div>
         <div className='w-full mt-4'>
-          <Button />
+          <Button label='Sign Up' />
         </div>
         <div className='display flex justify-center items-center'>
           <p className='text-center w-[270px]'>
