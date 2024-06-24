@@ -120,6 +120,8 @@ const Navigation = () => {
           <button onClick={() => setOpenAddJob(false)}>
             <FiX className='text-2xl' />
           </button>
+
+          <h1 className='text-xl capitalize'>Add Applied Jobs</h1>
           <div>
             <InputComponent label='company' />
           </div>

@@ -41,12 +41,12 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   return (
     <div className='relative' ref={dropdownRef}>
-      <label htmlFor='' className=''>
+      <label htmlFor='' className=' text-[#6b7280] text-sm'>
         {label}
       </label>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className='w-full px-4 py-2 mt-1 text-left bg-white border border-gray-100 focus:border-[#3b82f6] rounded shadow-sm focus:outline-none   focus:border-blue-500'
+        className='w-full px-4 py-2 mt-1 text-left bg-white border border-gray-100 focus:border-[#3b82f6] rounded shadow-sm focus:outline-none   focus:border-blue-500  text-[#6b7280] text-sm'
       >
         {selectedOption || placeholder}
       </button>
