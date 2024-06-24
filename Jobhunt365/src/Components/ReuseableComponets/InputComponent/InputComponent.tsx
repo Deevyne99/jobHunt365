@@ -4,7 +4,10 @@ const InputComponent = ({ label }: { label: string }) => {
   return (
     <div className=' flex  flex-col justify-center items-center mx-auto w-full   '>
       <div className='flex flex-col w-full gap-1 '>
-        <label htmlFor='' className='capitalize flex items-center text-left '>
+        <label
+          htmlFor=''
+          className='capitalize flex items-center text-left text-sm  text-[#6b7280]'
+        >
           {label}
         </label>
         <input
