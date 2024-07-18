@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import Avatar from '../Avatar/Avatar'
 import { useState, useRef } from 'react'
 import { FiX } from 'react-icons/fi'
-import { FaAlignRight } from 'react-icons/fa'
-import { FaChevronDown, FaSquarePlus } from 'react-icons/fa6'
+import { FaAlignRight, FaSignOutAlt, FaUser } from 'react-icons/fa'
+import { FaChevronDown, FaSquarePlus, FaChevronUp } from 'react-icons/fa6'
 import { data } from '../../../data'
 import InputComponent from '../InputComponent/InputComponent'
 import Dropdown from '../dropDownComponente/DropDown'
@@ -13,6 +13,7 @@ import Button from '../ButtonComponent/Button'
 const Navigation = () => {
   const [openNav, setOpenNav] = useState(false)
   const [openAddJob, setOpenAddJob] = useState(false)
+  const [openDropDown, setOpenDropDown] = useState(false)
 
   const [image, setImage] = useState<string | ArrayBuffer | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -68,9 +69,16 @@ const Navigation = () => {
               Add Job
             </button>
           </div>
-          <div className='flex items-center gap-2 '>
+          <div
+            className='flex items-center gap-2 '
+            onClick={() => setOpenDropDown(!openDropDown)}
+          >
             <Avatar firstName='Ude' lastName='banks' />
-            <FaChevronDown className='text-[#6b7280] text-sm' />
+            {openDropDown ? (
+              <FaChevronUp className='text-[#6b7280] text-sm' />
+            ) : (
+              <FaChevronDown className='text-[#6b7280] text-sm' />
+            )}
           </div>
         </div>
       </div>
@@ -191,6 +199,19 @@ const Navigation = () => {
             <Button label='Add Job' />
           </div>
         </div>
+      </div>
+      <div
+        className={`bg-white  transition-all duration-300 rounded-md flex flex-col gap-4 items-start shadow-md h-[100px] w-[180px] absolute top-20 right-4 p-4 ${
+          openDropDown ? 'top-20 ' : 'top-[-300px]'
+        }`}
+      >
+        <button className='flex gap-2 items-center capitalize'>
+          <FaUser className='text-[#6b7280]' />
+          profile
+        </button>
+        <button className='flex gap-2 items-center capitalize'>
+          <FaSignOutAlt className='text-[#6b7280]' /> logout
+        </button>
       </div>
     </header>
   )
