@@ -1,6 +1,18 @@
 import Navigation from '../../Components/ReuseableComponets/Navigation/Navigation'
 import avatarImg from '../../assets/woman-4.jpg'
+import React, { useState, useRef, ChangeEvent } from 'react'
+
 const Profile = () => {
+  const [avatar, setAvatar] = useState(avatarImg)
+  const fileInputRef = useRef<HTMLInputElement | null>(null)
+
+  const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      const imageUrl = URL.createObjectURL(file)
+      setAvatar(imageUrl)
+    }
+  }
   const techSkills = [
     // Programming Languages
     'Python',
@@ -91,7 +103,7 @@ const Profile = () => {
       <div className='flex flex-col gap-8 mt-20 md:mt-24 mx-4 md:mx-8 mb-8'>
         <div className='flex bg-white p-4 flex-col rounded-md '>
           <div className='flex flex-col md:flex-row justify-between'>
-            <div className='flex gap-4  items-center '>
+            {/* <div className='flex gap-4  items-center '>
               <div className='h-[80px] w-[80px]'>
                 <img
                   src={avatarImg}
@@ -103,9 +115,27 @@ const Profile = () => {
                 <h3>Kalu Divine</h3>
                 <p className='text-sm'>kaludivine545@gmail</p>
               </div>
-            </div>
-            <div>
-              <input type='file' />
+            </div> */}
+            <div className='flex gap-4 items-center'>
+              <div className='h-[80px] w-[80px]'>
+                <input
+                  type='file'
+                  accept='image/*'
+                  onChange={handleImageUpload}
+                  ref={fileInputRef}
+                  style={{ display: 'none' }}
+                />
+                <img
+                  src={avatar}
+                  alt='avatar'
+                  className='object-cover object-center rounded-[50%] h-full w-full'
+                  onClick={() => fileInputRef.current?.click()}
+                />
+              </div>
+              <div className='flex flex-col'>
+                <h3>kalu Divine</h3>
+                <p className='text-sm'>kaludivine545@gmail.com</p>
+              </div>
             </div>
           </div>
           <div className='mt-4 flex flex-col '>

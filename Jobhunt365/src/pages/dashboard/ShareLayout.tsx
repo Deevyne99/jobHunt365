@@ -3,8 +3,6 @@
 import { Outlet } from 'react-router-dom'
 import Navigation from '../../Components/ReuseableComponets/Navigation/Navigation'
 
-Navigation
-
 const ShareLayout = () => {
   return (
     <main className=' flex flex-col'>

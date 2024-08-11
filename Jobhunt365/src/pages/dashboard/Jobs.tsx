@@ -3,21 +3,15 @@ import FilterComponent from '../../Components/ReuseableComponets/FilterComponent
 import SmallFilterComponent from '../../Components/ReuseableComponets/FilterComponent/smallFilterComponent/SmallFilterComponent'
 
 import SuggestedJob from '../../Components/ReuseableComponets/miniJobCard/SuggestedJob'
-import {
-  FaGlobe,
-  FaSliders,
-  FaSistrix,
-  FaArrowRight,
-  FaArrowLeft,
-} from 'react-icons/fa6'
-import { Link } from 'react-router-dom'
+import { FaGlobe, FaSliders, FaSistrix } from 'react-icons/fa6'
+// import { Link } from 'react-router-dom'
 
-const Applications = () => {
+const Jobs = () => {
   const [openFilter, setOpenFilter] = useState(false)
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState(false)
+  // const [isSidebarExpanded, setIsSidebarExpanded] = useState(false)
 
   const handleOpenFilter = () => setOpenFilter(!openFilter)
-  const toggleSidebar = () => setIsSidebarExpanded(!isSidebarExpanded)
+  // const toggleSidebar = () => setIsSidebarExpanded(!isSidebarExpanded)
 
   return (
     <div className='flex flex-col w-full relative '>
@@ -84,4 +78,4 @@ const Applications = () => {
   )
 }
 
-export default Applications
+export default Jobs
