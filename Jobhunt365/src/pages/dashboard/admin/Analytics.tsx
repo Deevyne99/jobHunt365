@@ -8,7 +8,7 @@ import TableComponent from '../../../Components/ReuseableComponets/TableComponen
 const Analytics = () => {
   return (
     <div className='mt-8  mx-4 flex flex-col'>
-      <div className='flex gap-4 justify-center items-center'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center items-center'>
         <Card title={'users'} />
         <Card title={'jobs'} />
         <Card title={'Applied Jobs'} />
@@ -17,10 +17,10 @@ const Analytics = () => {
         {/* <Card /> */}
       </div>
       <div className='flex mt-8 justify-center  gap-8'>
-        <div className='w-[47%] h-[250px] md:h-[300px] '>
+        <div className='w-[50%] h-[250px] md:h-[300px] '>
           <BarChart />
         </div>
-        <div className='w-[47%] h-[250px] md:h-[300px]'>
+        <div className='w-[50%] h-[250px] md:h-[300px]'>
           <DoughnutChart />
         </div>
       </div>
