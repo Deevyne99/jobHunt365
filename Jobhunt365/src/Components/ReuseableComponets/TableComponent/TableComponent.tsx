@@ -5,7 +5,7 @@ import { useState } from 'react'
 const TableComponent = () => {
   const [status, setStatus] = useState('pending')
   return (
-    <div className='flex flex-col bg-white shadow-lg rounded-lg'>
+    <div className='flex flex-col bg-white shadow-lg rounded-lg '>
       <div className='flex justify-between py-3 px-4  '>
         <div className='flex h-[40px] w-[200px] '>
           <input
@@ -51,6 +51,7 @@ const TableComponent = () => {
                   Successful
                 </p>
               </td>
+              <td className='p-4 capitalize'>view</td>
             </tr>
             <tr className='border-t border-gray-100 text-sm text-[#6b7280]'>
               <td className='p-4'>1</td>
@@ -59,6 +60,7 @@ const TableComponent = () => {
               <td className='p-4'>10</td>
               <td className='p-4'>10 Aug 2024</td>
               <td className='p-4'>Successful</td>
+              <td className='p-4'>view</td>
             </tr>
             <tr className='border-t border-gray-100 text-sm text-[#6b7280]'>
               <td className='p-4'>1</td>
@@ -67,6 +69,7 @@ const TableComponent = () => {
               <td className='p-4'>10</td>
               <td className='p-4'>10 Aug 2024</td>
               <td className='p-4'>Successful</td>
+              <td className='p-4 capitalize'>view</td>
             </tr>
             <tr className='border-t text-sm border-gray-100 text-[#6b7280]'>
               <td className='p-4'>1</td>
@@ -75,6 +78,7 @@ const TableComponent = () => {
               <td className='p-4'>10</td>
               <td className='p-4'>10 Aug 2024</td>
               <td className='p-4'>Successful</td>
+              <td className='p-4 capitalize'>view</td>
             </tr>
             <tr className='border-t text-sm text-[#6b7280] border-gray-100 '>
               <td className='p-4'>1</td>
@@ -83,6 +87,7 @@ const TableComponent = () => {
               <td className='p-4'>10</td>
               <td className='p-4'>10 Aug 2024</td>
               <td className='p-4'>Successful</td>
+              <td className='p-4 capitalize'>view</td>
             </tr>
             {/* Add more rows as needed */}
           </tbody>
