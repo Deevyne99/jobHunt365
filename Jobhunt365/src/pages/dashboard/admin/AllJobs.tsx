@@ -1,13 +1,18 @@
+import { useState } from 'react'
 import { FaSistrix } from 'react-icons/fa6'
 // import InputComponent from '../../../Components/ReuseableComponets/InputComponent/InputComponent'
 import SuggestedJob from '../../../Components/ReuseableComponets/miniJobCard/SuggestedJob'
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io'
-// import ShortDropdown from '../../../Components/ReuseableComponets/shortDropDown/ShortDropDown'
-// import { useState } from 'react'
+
+import ShortDropDown from '../../../Components/ReuseableComponets/shortDropDown/ShortDropDown'
 // import React from 'react'
 
 const AllJobs = () => {
-  // const [openFilter, setOpenFilter] = useState(false)
+  const [openFilter, setOpenFilter] = useState(true)
+  const [openSort, setOpenSort] = useState(false)
+
+  const handleFilterDropDown = () => setOpenFilter(!openFilter)
+  const handleSortDropDown = () => setOpenSort(!openSort)
 
   return (
     <div className='mx-4 md:mx-12 my-8'>
@@ -23,17 +28,42 @@ const AllJobs = () => {
             </button>
           </div>
           <div className='flex gap-4 capitalize'>
-            <div>
-              <button className='capitalize w-[100px] flex gap-1 items-center  bg-white p-2 text-[#6b7280] text-sm'>
+            <div className='relative max-w-[200px] '>
+              <button
+                onClick={() => handleFilterDropDown()}
+                className='capitalize w-[100px] flex gap-1 items-center  bg-white p-2 text-[#6b7280] text-sm'
+              >
                 filter by
-                <IoMdArrowDropdown className='text-2xl' />
+                {openFilter ? (
+                  <IoMdArrowDropup className='text-2xl' />
+                ) : (
+                  <IoMdArrowDropdown className='text-2xl' />
+                )}
               </button>
+              {openFilter && (
+                <div className='absolute top-12 w-[200px]'>
+                  <ShortDropDown />
+                </div>
+              )}
             </div>
-            <div>
-              <button className='capitalize flex gap-1 items-center  bg-white p-2 text-[#6b7280] text-sm'>
+            <div className='relative'>
+              <button
+                onClick={() => handleSortDropDown()}
+                className='capitalize flex gap-1 items-center  bg-white p-2 text-[#6b7280] text-sm'
+              >
                 sort by
-                <IoMdArrowDropdown className='text-2xl' />
+                {openSort ? (
+                  <IoMdArrowDropup className='text-2xl' />
+                ) : (
+                  <IoMdArrowDropdown className='text-2xl' />
+                )}
               </button>
+
+              {openSort && (
+                <div className='absolute top-12 w-[200px]'>
+                  <ShortDropDown />
+                </div>
+              )}
             </div>
             <button className='capitalize bg-[#60a5fa] text-white p-2'>
               add job

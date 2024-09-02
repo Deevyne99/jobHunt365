@@ -16,15 +16,15 @@ const Analytics = () => {
 
         {/* <Card /> */}
       </div>
-      <div className='flex mt-8 justify-center  gap-8'>
-        <div className='w-[50%] h-[250px] md:h-[300px] '>
+      <div className='flex md:flex-row flex-col mt-8 justify-center  gap-8'>
+        <div className='flex w-full md:w-[50%] h-[250px] md:h-[300px] '>
           <BarChart />
         </div>
-        <div className='w-[50%] h-[250px] md:h-[300px]'>
+        <div className='w-full md:w-[50%] h-[250px] md:h-[300px]'>
           <DoughnutChart />
         </div>
       </div>
-      <div className='my-8 mx-3'>
+      <div className='my-8 '>
         <TableComponent />
       </div>
     </div>
