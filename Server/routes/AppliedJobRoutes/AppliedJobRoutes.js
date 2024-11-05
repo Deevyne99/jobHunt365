@@ -9,10 +9,12 @@ const {
   getSingleAppliedJobs,
   deleteAppliedJobs,
   updateAppliedJobs,
+  uploadLogo,
 } = require('../../controllers/AppliedJobsControllers')
 const router = express.Router()
 
 router.route('/create').post(AuthenticateUser, createAppliedJob)
+router.route('/uploadLogo').post(AuthenticateUser, uploadLogo)
 
 router.route('/getAppliedJobs').get(AuthenticateUser, getAllAppliedJobs)
 

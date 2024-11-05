@@ -2,6 +2,7 @@ const Jobs = require('../models/Jobs')
 const CustomApiError = require('../errors')
 const { StatusCodes } = require('http-status-codes')
 const { checkPermission } = require('../utils')
+const path = require('path')
 
 const createJobs = async (req, res) => {
   req.body.user = req.user.userId
@@ -66,10 +67,38 @@ const getSingleJob = async (req, res) => {
   res.status(StatusCodes.OK).json({ success: true, job })
 }
 
+const uploadJobLogo = async (req, res) => {
+  // console.log(req.files)
+  //check if a file was chosen
+  if (!req.files) {
+    throw new CustomApiError.BadRequestError('No file was uploaded')
+  }
+
+  const logo = req.files.logo
+  console.log(logo)
+  if (!logo.mimetype.startsWith('image')) {
+    throw new CustomApiError.BadRequestError('Please Upload an image')
+  }
+
+  //calculate max size
+  const maxSize = 1024 * 1024 * 2
+
+  //check if image is greater than max size
+  if (logo > maxSize) {
+    throw new CustomApiError.BadRequestError(
+      'Please Upload image less than 2mb'
+    )
+  }
+  const imagePath = path.join(__dirname, '../images/jobLogos/' + `${logo.name}`)
+  await logo.mv(imagePath)
+  res.status(StatusCodes.OK).json({ image: `/jobLogos/${logo.name}` })
+}
+
 module.exports = {
   createJobs,
   getAllJobs,
   deleteJob,
   updateJob,
   getSingleJob,
+  uploadJobLogo,
 }
