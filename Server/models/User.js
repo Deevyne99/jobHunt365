@@ -10,6 +10,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please Enter your Last name'],
   },
+  about: {
+    type: String,
+  },
+  skills: {
+    type: [String],
+  },
+
   email: {
     type: String,
     required: [true, 'Please provide email'],

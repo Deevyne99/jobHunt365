@@ -88,9 +88,14 @@ const getSingleUser = async (req, res) => {
 }
 
 const updateUser = async (req, res) => {
-  const { firstName, lastName, email, phoneNumber, location } = req.body
+  const { firstName, lastName, email, phoneNumber, location, about, skills } =
+    req.body
 
-  if (!firstName || !lastName || !email || !phoneNumber || !location) {
+  if (
+    (!firstName || !lastName || !email || !phoneNumber || !location,
+    !about,
+    !skills)
+  ) {
     throw new CustomApiError.BadRequestError('Please enter all fields')
   }
   const user = await User.findOne({ _id: req.user.userId })
@@ -104,6 +109,8 @@ const updateUser = async (req, res) => {
   user.location = location
   user.phoneNumber = phoneNumber
   user.email = email
+  user.about = about
+  user.skills = skills
   await user.save()
   const tokenUser = createTokenUser(user)
   attachCookiesToResponse({ res, user: tokenUser })
