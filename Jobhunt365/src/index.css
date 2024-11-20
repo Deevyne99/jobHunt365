@@ -19,6 +19,6 @@ body,
 
 @layer base {
   body {
-    @apply bg-[#f5f7fb]; /* Replace with any Tailwind color class */
+    @apply bg-[#F5F5F5]; /* Replace with any Tailwind color class */
   }
 }
