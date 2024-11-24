@@ -1,6 +1,7 @@
 // import React from 'react'
 
 import image from '../assets/hero-section.jpg'
+// import heroImage from '../assets/home-screen.png'
 
 import SuggestedJob from '../Components/ReuseableComponets/miniJobCard/SuggestedJob'
 const jobCategories = [
@@ -26,12 +27,22 @@ const Home = () => {
   return (
     <div className='flex  flex-col '>
       <div className='flex flex-col gap-4 md:gap-8 mt-24 mx-4 md:mx-12'>
-        <div className='flex justify-between'>
-          <article className='w-[50%] flex '>
+        <div className='flex gap-8 justify-between items-center '>
+          <article className='w-[50%] flex  flex-col'>
             <h2 className='text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
               tenetur!
             </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quae
+              at sapiente excepturi animi sunt accusamus molestiae temporibus
+              quos a. Iure commodi fugiat, assumenda incidunt aliquid itaque,
+              nesciunt labore ratione nisi, perferendis nihil quod numquam quas
+              quos nam odit cupiditate. Quae, dolore minus. Ducimus nisi
+              quibusdam optio illum delectus, repudiandae voluptatum impedit
+              explicabo, esse, rerum voluptatibus eos! Ducimus blanditiis atque,
+              saepe dignissimo.
+            </p>
           </article>
           <div className='w-[50%]'>
             <img src={image} alt='' />
