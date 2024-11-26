@@ -41,7 +41,9 @@ const Navigation = () => {
       <div className='flex flex-col'>
         <div className=' flex items-center py-2 justify-between mx-4 md:mx-8'>
           <div className='flex'>
-            <h1 className='text-xl hidden md:flex'>Jobhunt365</h1>
+            <Link to={'/'} className='text-xl hidden md:flex'>
+              Jobhunt365
+            </Link>
             <button
               className='flex md:hidden text-[#6b7280]'
               onClick={() => setOpenNav(true)}

@@ -34,7 +34,7 @@ const TableComponent = () => {
                 <th className='p-2 md:p-4 text-left hidden md:table-cell'>
                   Date
                 </th>
-                <th className='p-2 md:p-4 text-left '>Payment Status</th>
+
                 <th className='p-2 md:p-4 text-left '>Action</th>
               </tr>
             </thead>
@@ -45,19 +45,7 @@ const TableComponent = () => {
                 <td className='p-2 md:p-4'>Bags</td>
                 <td className='p-2 md:p-4'>10</td>
                 <td className='p-2 md:p-4 hidden md:flex'>10 Aug 2024</td>
-                <td className={`p-2 `}>
-                  <p
-                    className={` max-w-[100px] p-1 text-center rounded-sm ${
-                      status === 'success'
-                        ? 'bg-[#dcfce7] text-[#10b981]'
-                        : status === 'pending'
-                        ? 'bg-[#fef9c3] text-[#facc15]'
-                        : 'bg-[#fee2e2] text-[#ef4444]'
-                    }`}
-                  >
-                    Successful
-                  </p>
-                </td>
+
                 <td className='p-2 capitalize md:p-4'>view</td>
               </tr>
               <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
@@ -66,19 +54,7 @@ const TableComponent = () => {
                 <td className='p-2 md:p-4'>Bags</td>
                 <td className='p-2 md:p-4'>10</td>
                 <td className='p-2 md:p-4 hidden md:flex'>10 Aug 2024</td>
-                <td className={`p-2 `}>
-                  <p
-                    className={` max-w-[100px] p-1 text-center rounded-sm ${
-                      status === 'success'
-                        ? 'bg-[#dcfce7] text-[#10b981]'
-                        : status === 'pending'
-                        ? 'bg-[#fef9c3] text-[#facc15]'
-                        : 'bg-[#fee2e2] text-[#ef4444]'
-                    }`}
-                  >
-                    Successful
-                  </p>
-                </td>
+
                 <td className='p-2 capitalize md:p-4'>view</td>
               </tr>
               <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
@@ -87,19 +63,7 @@ const TableComponent = () => {
                 <td className='p-2 md:p-4'>Bags</td>
                 <td className='p-2 md:p-4'>10</td>
                 <td className='p-2 md:p-4 hidden md:flex'>10 Aug 2024</td>
-                <td className={`p-2 `}>
-                  <p
-                    className={` max-w-[100px] p-1 text-center rounded-sm ${
-                      status === 'success'
-                        ? 'bg-[#dcfce7] text-[#10b981]'
-                        : status === 'pending'
-                        ? 'bg-[#fef9c3] text-[#facc15]'
-                        : 'bg-[#fee2e2] text-[#ef4444]'
-                    }`}
-                  >
-                    Successful
-                  </p>
-                </td>
+
                 <td className='p-2 capitalize md:p-4'>view</td>
               </tr>
 

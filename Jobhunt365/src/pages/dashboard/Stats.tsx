@@ -16,7 +16,7 @@ const Stats = () => {
               <div className='w-full  '>
                 <BarChart />
               </div>
-              <div className='w-full'>
+              <div className='w-full h-[430px]'>
                 <DoughnutChart />
               </div>
             </div>
