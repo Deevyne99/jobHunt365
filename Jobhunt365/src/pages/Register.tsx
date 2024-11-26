@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import PhoneInput from 'react-phone-input-2'
+// import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import InputComponent from '../Components/ReuseableComponets/InputComponent/InputComponent'
 import Button from '../Components/ReuseableComponets/ButtonComponent/Button'
 
 const Register = () => {
-  const [phone, setPhone] = useState<string>('')
+  // const [phone, setPhone] = useState<string>('')
   return (
-    <section className='flex flex-col items-center justify-center py-8 h-full'>
+    <section className='flex flex-col items-center justify-center py-8 px-4'>
       <div className='flex flex-col gap-4 w-full max-w-[400px]'>
         <header>
           <h1 className='capitalize text-center text-2xl'>Let's get started</h1>
@@ -27,7 +27,10 @@ const Register = () => {
         <div className='w-full'>
           <InputComponent label='Location' />
         </div>
-        <div className='w-[90%] flex mx-auto flex-col sm:w-full '>
+        <div className='w-full'>
+          <InputComponent label='Phone Number' />
+        </div>
+        {/* <div className='w-[90%] flex mx-auto flex-col sm:w-full '>
           <label htmlFor=''>Phone Number</label>
           <div className='flex justify-center items-center flex-col w-full'>
             <PhoneInput
@@ -36,14 +39,14 @@ const Register = () => {
               value={phone}
               onChange={(phoneValue: string) => setPhone(phoneValue)}
               inputStyle={{
-                maxWidth: '400px',
+                maxWidth: '100%',
                 width: '100%',
                 paddingTop: '16px',
                 paddingBottom: '16px',
               }}
             />
           </div>
-        </div>
+        </div> */}
         <div className='w-full'>
           <InputComponent label='password' />
         </div>
