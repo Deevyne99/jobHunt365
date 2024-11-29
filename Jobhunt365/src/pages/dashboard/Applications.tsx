@@ -42,14 +42,14 @@ const Applications = () => {
             </button>
           </div>
           <div className='mt-4  grid 2xl:grid-cols-3 sm:grid-cols-2  grid-cols-1  gap-4 justify-center items-center  md:mx-2 mx-0'>
-            <JobCard />
-            <JobCard />
-            <JobCard />
-            <JobCard />
-            <JobCard />
-            <JobCard />
-            <JobCard />
-            <JobCard />
+            <JobCard JobStatus={'Interview'} />
+            <JobCard JobStatus={'Declined'} />
+            <JobCard JobStatus={'Accepted'} />
+            <JobCard JobStatus={'Interview'} />
+            <JobCard JobStatus={'Declined'} />
+            <JobCard JobStatus={'Interview'} />
+            <JobCard JobStatus={'Accepted'} />
+            <JobCard JobStatus={'Declined'} />
           </div>
         </div>
 
