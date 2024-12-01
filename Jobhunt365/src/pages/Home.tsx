@@ -5,26 +5,8 @@ import image_1 from '../assets/image-1.jpg'
 import { Link } from 'react-router-dom'
 import SuggestedJob from '../Components/ReuseableComponets/miniJobCard/SuggestedJob'
 import JobCard from '../Components/ReuseableComponets/JobCard/JobCard'
-import { slider } from '../data'
-
-const jobCategories = [
-  { id: 1, name: 'Software Development' },
-  { id: 2, name: 'Data Science' },
-  { id: 3, name: 'Marketing' },
-  { id: 4, name: 'Design' },
-  { id: 5, name: 'Healthcare' },
-  { id: 6, name: 'Education' },
-  { id: 7, name: 'Finance' },
-  { id: 8, name: 'Customer Service' },
-  { id: 9, name: 'Engineering' },
-  { id: 10, name: 'Human Resources' },
-  { id: 11, name: 'Sales' },
-  { id: 12, name: 'Logistics' },
-  { id: 13, name: 'Content Creation' },
-  { id: 14, name: 'Legal' },
-  { id: 15, name: 'Freelance & Remote Work' },
-  { id: 16, name: 'Freelance & Remote Work' },
-]
+import { features, slider } from '../data'
+import Features from '../Components/Features'
 
 const Home = () => {
   const [productIndex, setProductIndex] = useState(0)
@@ -47,7 +29,7 @@ const Home = () => {
   }, [productIndex])
   return (
     <div className='flex  flex-col bg-white w-full overflow-hidden'>
-      <div className='flex flex-col h-[500px]  w-full gap-4 md:gap-8 mt-16 md:mt-24 mx-4 md:mx-12  relative items-center justify-center'>
+      <div className='flex flex-col md:h-[300px] h-[500px]  w-full gap-4 md:gap-8 mt-16 md:mt-24 mx-4 md:mx-12  relative items-center justify-center'>
         {slider.map((item, index) => {
           const { id, image, descp, title } = item
           let position = 'translate-x-full opacity-0'
@@ -65,21 +47,21 @@ const Home = () => {
           }
           return (
             <div
-              className={`absolute top-0 left-0 w-full flex flex-col md:flex-row items-center px-16 justify-center md:justify-between md:gap-12 gap-4 transition-transform duration-300  `}
+              className={`absolute top-0 left-0 w-full flex flex-col md:flex-row items-center px-4 md:px-16 justify-center md:justify-between md:gap-12 gap-4 transition-transform duration-300  `}
               key={id}
             >
               <article
-                className={`w-full md:w-[50%] flex  flex-col transition-transform duration-500 ${position}`}
+                className={`w-full md:w-[50%] flex  flex-col transition-transform duration-400 ${position}`}
               >
                 <h2 className='text-2xl text-[#94a3b8] max-w-[500px] font-bold'>
                   {title}
                 </h2>
-                <p className='text-[#94a3b8] max-w-[500px] tracking-wide '>
+                <p className='text-[#94a3b8] max-w-[500px] tracking-wide leading-loose'>
                   {descp}
                 </p>
               </article>
-              <div className='w-full md:w-[50%] flex gap-4'>
-                <div className='flex flex-col gap-8'>
+              <div className='w-full md:w-[50%] md:flex-row flex-col flex gap-4'>
+                <div className='flex md:flex-col gap-8 flex-row order-2 md:order-1 justify-center items-center'>
                   {slider.map((item, index) => {
                     return (
                       <div
@@ -88,13 +70,13 @@ const Home = () => {
                           productIndex === index
                             ? 'bg-[#60a5fa]'
                             : 'bg-gray-100'
-                        }  w-[5px] h-[80px]`}
+                        }  md:w-[5px] md:h-[80px] w-[40px] h-[5px] md:mt-0 mt-4 `}
                       ></div>
                     )
                   })}
                 </div>
                 <div
-                  className={`flex transition-transform duration-500 ${vertical}`}
+                  className={`flex transition-transform duration-400 order-1 md:order-2 ${vertical} `}
                 >
                   <img src={image} alt='' />
                 </div>
@@ -117,20 +99,11 @@ const Home = () => {
         </div>
       </div>
       <div className='flex  mt-12 flex-col justify-center'>
-        <h2 className='text-center text-2xl font-semibold'>
-          Trending Job Category
-        </h2>
-        <div className=' grid grid-cols-2 md:grid-cols-2 xl:grid-cols-4 mt-6 gap-6 px-12'>
-          {jobCategories.map((category) => {
-            return (
-              <div
-                key={category.id}
-                className='bg-white  text-[#94a3b8] font-bold mt p-2 flex rounded-md justify-center items-center shadow-md'
-              >
-                {' '}
-                {category.name}
-              </div>
-            )
+        <h2 className='text-center text-2xl font-semibold'>Features Section</h2>
+        <div className='flex md:flex-row flex-col justify-center items-center mt-8 mx-4 md:mx-16 gap-6'>
+          {features.map((item) => {
+            // const {id,description,name,icon} = item
+            return <Features key={item.id} {...item} />
           })}
         </div>
         <button className='p-2 flex justify-center items-center mt-8 bg-[#60a5fa] text-white font-semibold rounded-md w-[200px] mx-auto'>
