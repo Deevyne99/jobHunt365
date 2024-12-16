@@ -14,17 +14,17 @@ const Features = ({
   name: string
 }) => {
   return (
-    <div className='flex flex-col  border border-[#ccc]  p-4 w-[300px] h-[250px] justify-center items-center rounded-md'>
+    <div className='flex flex-col  border border-[#ccc]  p-4 w-[300px] h-[250px] justify-center items-center rounded-md '>
       {id === 1 ? (
-        <div className=' flex flex-col bg-[#f0f9ff] p-2 w-[40px] h-[40px] rounded-[50%] '>
+        <div className=' flex flex-col bg-[#f0f9ff] p-2 w-[40px] h-[40px] rounded-[50%] justify-center items-center'>
           <FaFileSignature className=' text-[#0284c7] text-xl' />
         </div>
       ) : id === 2 ? (
-        <div className=' flex flex-col bg-[#fff7ed]  p-2 w-[40px] h-[40px] rounded-[50%]'>
+        <div className=' flex flex-col bg-[#fff7ed]  p-2 w-[40px] h-[40px] rounded-[50%] justify-center items-center'>
           <SlCalender className=' text-[#ea580c] text-xl' />
         </div>
       ) : id === 3 ? (
-        <div className=' flex flex-col bg-[#f0fdf4]  p-2 w-[40px] h-[40px] rounded-[50%]'>
+        <div className=' flex flex-col bg-[#f0fdf4]  p-2 w-[40px] h-[40px] rounded-[50%] justify-center items-center'>
           <MdDashboard className=' text-[#16a34a] text-xl' />
         </div>
       ) : id === 4 ? (

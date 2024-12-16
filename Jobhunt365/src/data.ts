@@ -70,3 +70,56 @@ export const features = [
     name: 'Job Search Organizer',
   },
 ]
+
+export const jobCategories = [
+  {
+    id: 1,
+    name: 'Technology',
+    examples: ['Software Engineer', 'Data Scientist', 'IT Support'],
+  },
+  { id: 2, name: 'Healthcare', examples: ['Nurse', 'Pharmacist', 'Physician'] },
+  {
+    id: 3,
+    name: 'Education',
+    examples: ['Teacher', 'Professor', 'Instructional Designer'],
+  },
+  {
+    id: 4,
+    name: 'Finance',
+    examples: ['Accountant', 'Financial Analyst', 'Auditor'],
+  },
+  {
+    id: 5,
+    name: 'Marketing',
+    examples: ['Digital Marketer', 'Content Strategist', 'SEO Specialist'],
+  },
+  {
+    id: 6,
+    name: 'Arts & Entertainment',
+    examples: ['Graphic Designer', 'Video Editor', 'Animator'],
+  },
+  {
+    id: 7,
+    name: 'Sales',
+    examples: [
+      'Sales Representative',
+      'Business Development Manager',
+      'Account Executive',
+    ],
+  },
+  {
+    id: 8,
+    name: 'Engineering',
+    examples: ['Civil Engineer', 'Mechanical Engineer', 'Electrical Engineer'],
+  },
+  {
+    id: 9,
+    name: 'Hospitality',
+    examples: ['Hotel Manager', 'Event Planner', 'Travel Consultant'],
+  },
+  {
+    id: 10,
+    name: 'Law',
+    examples: ['Lawyer', 'Paralegal', 'Legal Consultant'],
+  },
+]
