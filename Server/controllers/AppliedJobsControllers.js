@@ -13,6 +13,7 @@ const createAppliedJob = async (req, res) => {
     const appliedJob = await AppliedJobs.create(req.body)
     res.status(StatusCodes.CREATED).json({ success: true, appliedJob })
   }
+
   const job = await Jobs.findOne({ _id: jobId })
   if (!job) {
     throw new CustomApiErrors.NotFoundError(`No Job with the id ${id}`)
@@ -69,7 +70,6 @@ const getAllAppliedJobs = async (req, res) => {
   const limit = Number(req.query.limit) || 10
   const skip = (page - 1) * limit
   result = result.skip(skip).limit(limit)
-
   const appliedJobs = await result
   const totalJobs = await AppliedJobs.countDocuments(queryObject)
   const numOfPages = Math.ceil(totalJobs / limit)
