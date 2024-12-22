@@ -2,8 +2,16 @@ import { Link, Outlet } from 'react-router-dom'
 
 // import React from 'react'
 import { RiMenu3Line } from 'react-icons/ri'
+import Sidebar from './ReuseableComponets/Sidebar/Sidebar'
+import { useState } from 'react'
+useState
 
 const Navbar = () => {
+  const [openSidebar, setOpenSidebar] = useState(false)
+
+  const handleOpenSidebar = () => {
+    setOpenSidebar(!openSidebar)
+  }
   return (
     <main>
       <header className='flex flex-col bg-white   '>
@@ -15,13 +23,22 @@ const Navbar = () => {
               <Link to={'/login'}>login</Link>
               <Link to={'/register'}>register</Link>
             </ul>
-            <button className='flex md:hidden'>
-              <RiMenu3Line />
+            <button
+              onClick={() => handleOpenSidebar()}
+              className='flex md:hidden'
+            >
+              <RiMenu3Line className='text-xl text-[#94a3b8] font-bold' />
             </button>
           </nav>
         </div>
       </header>
       <Outlet />
+      <div>
+        <Sidebar
+          openSidebar={openSidebar}
+          handleOpenSidebar={handleOpenSidebar}
+        />
+      </div>
     </main>
   )
 }
