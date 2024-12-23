@@ -151,31 +151,32 @@ const updateAppliedJobs = async (req, res) => {
   res.status(StatusCodes.OK).json({ success: true, job })
 }
 
-const uploadLogo = async (req, res) => {
-  console.log(req.files)
+//some users wont have the logo of the company they applied too
+// const uploadLogo = async (req, res) => {
+//   console.log(req.files)
 
-  if (!req.files) {
-    throw new CustomApiErrors.BadRequestError('No file was uploaded')
-  }
-  const logo = req.files.logo
-  if (!logo.mimetype.startsWith('image')) {
-    throw new CustomApiErrors.BadRequestError('Please upload an image')
-  }
+//   if (!req.files) {
+//     throw new CustomApiErrors.BadRequestError('No file was uploaded')
+//   }
+//   const logo = req.files.logo
+//   if (!logo.mimetype.startsWith('image')) {
+//     throw new CustomApiErrors.BadRequestError('Please upload an image')
+//   }
 
-  //calculate max size
-  const maxSize = 1024 * 1024 * 2
+//   //calculate max size
+//   const maxSize = 1024 * 1024 * 2
 
-  //check if image is greater than max size
-  if (logo > maxSize) {
-    throw new CustomApiErrors.BadRequestError(
-      'Please Upload image less than 2mb'
-    )
-  }
+//   //check if image is greater than max size
+//   if (logo > maxSize) {
+//     throw new CustomApiErrors.BadRequestError(
+//       'Please Upload image less than 2mb'
+//     )
+//   }
 
-  const imagePath = path.join(__dirname, '../images/logos/' + `${logo.name}`)
-  await logo.mv(imagePath)
-  res.status(StatusCodes.OK).json({ image: `/logos/${logo.name}` })
-}
+//   const imagePath = path.join(__dirname, '../images/logos/' + `${logo.name}`)
+//   await logo.mv(imagePath)
+//   res.status(StatusCodes.OK).json({ image: `/logos/${logo.name}` })
+// }
 
 module.exports = {
   createAppliedJob,
@@ -183,5 +184,4 @@ module.exports = {
   getSingleAppliedJobs,
   deleteAppliedJobs,
   updateAppliedJobs,
-  uploadLogo,
 }
