@@ -4,6 +4,8 @@ import SmallFilterComponent from '../../Components/ReuseableComponets/FilterComp
 
 import SuggestedJob from '../../Components/ReuseableComponets/miniJobCard/SuggestedJob'
 import { FaGlobe, FaSliders, FaSistrix } from 'react-icons/fa6'
+import DashboardSideBar from '../../Components/ReuseableComponets/DashboardSideBar/DashboardSideBar'
+DashboardSideBar
 // import { Link } from 'react-router-dom'
 
 const Jobs = () => {
@@ -23,54 +25,57 @@ const Jobs = () => {
         handleOpenFilter={handleOpenFilter}
       />
 
-      <div className='flex w-full mt-16 '>
+      <div className='flex w-full  '>
         <div className={`flex w-full  transition-margin duration-300`}>
-          <div className='hidden md:flex md:w-[30%] xl:w-[20%] p-2 mt-4'>
-            <FilterComponent />
+          <div className='w-[10%] md:w-[25%] h-screen sticky top-0 left-0  gap-4 mt-4'>
+            {/* <FilterComponent /> */}
+            <DashboardSideBar />
           </div>
-          <div className='lg:w-[60%] w-full   mt-6 flex flex-col md:px-4 px-4 max-h-screen overflow-y-scroll mb-4'>
-            <div className='flex items-center gap-4 justify-center'>
-              <button
-                className='bg-[#60a5fa] text-lg capitalize text-white p-2 rounded-md cursor-pointer md:hidden flex'
-                onClick={() => handleOpenFilter()}
-              >
-                <FaSliders />
-              </button>
-              <input
-                type='text'
-                className='md:w-[90%] w-full p-2 border-gray-100 focus:border-[#3b82f6] outline-none rounded-md border'
-              />
-              <button className='text-white text-lg capitalize bg-[#60a5fa] p-2 rounded-md cursor-pointer'>
-                <FaSistrix className='font-bold text-lg' />
-              </button>
-            </div>
-            <div className='mt-4 grid 2xl:grid-cols-3  sm:grid-cols-2 grid-cols-1 gap-4 justify-center items-center md:mx-2 mx-0'>
-              <SuggestedJob />
-              <SuggestedJob />
-              <SuggestedJob />
-              <SuggestedJob />
-              <SuggestedJob />
-              <SuggestedJob />
-              <SuggestedJob />
-              <SuggestedJob />
-              <SuggestedJob />
-              <SuggestedJob />
-            </div>
-          </div>
-
-          <div className='hidden lg:flex flex-col gap-4 md:w-[30%] lg:w-[20%] mt-4 max-h-screen overflow-y-scroll p-2'>
-            <div className='flex w-full p-4 rounded-md bg-white items-center gap-4'>
-              <div>
-                <FaGlobe className='text-[#60a5fa]' />
+          <div className='flex  w-full mt-16 '>
+            <div className=' w-full   mt-6 flex flex-col md:px-4 px-4 max-h-screen overflow-y-scroll mb-4'>
+              <div className='flex items-center gap-4 justify-center'>
+                <button
+                  className='bg-[#60a5fa] text-lg capitalize text-white p-2 rounded-md cursor-pointer md:hidden flex'
+                  onClick={() => handleOpenFilter()}
+                >
+                  <FaSliders />
+                </button>
+                <input
+                  type='text'
+                  className='md:w-[90%] w-full p-2 border-gray-100 focus:border-[#3b82f6] outline-none rounded-md border'
+                />
+                <button className='text-white text-lg capitalize bg-[#60a5fa] p-2 rounded-md cursor-pointer'>
+                  <FaSistrix className='font-bold text-lg' />
+                </button>
               </div>
-              <h2 className='text-sm text-[#6b7280] font-bold'>
-                Suggested Job
-              </h2>
+              <div className='mt-4 grid 2xl:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center items-center md:mx-2 mx-0'>
+                <SuggestedJob />
+                <SuggestedJob />
+                <SuggestedJob />
+                <SuggestedJob />
+                <SuggestedJob />
+                <SuggestedJob />
+                <SuggestedJob />
+                <SuggestedJob />
+                <SuggestedJob />
+                <SuggestedJob />
+              </div>
             </div>
-            <SuggestedJob />
-            <SuggestedJob />
-            <SuggestedJob />
-            <SuggestedJob />
+
+            {/* <div className='hidden lg:flex flex-col gap-4 md:w-[30%] lg:w-[30%] mt-4 max-h-screen overflow-y-scroll p-2'>
+              <div className='flex w-full p-4 rounded-md bg-white items-center gap-4'>
+                <div>
+                  <FaGlobe className='text-[#60a5fa]' />
+                </div>
+                <h2 className='text-sm text-[#6b7280] font-bold'>
+                  Suggested Job
+                </h2>
+              </div>
+              <SuggestedJob />
+              <SuggestedJob />
+              <SuggestedJob />
+              <SuggestedJob />
+            </div> */}
           </div>
         </div>
       </div>

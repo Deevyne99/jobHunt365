@@ -8,9 +8,13 @@ useState
 
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false)
+  const [register, setRegister] = useState(false)
 
   const handleOpenSidebar = () => {
     setOpenSidebar(!openSidebar)
+  }
+  const handleRegister = () => {
+    setRegister(!register)
   }
   return (
     <main>
@@ -19,9 +23,15 @@ const Navbar = () => {
           <nav className='flex justify-between items-center py-4 px-8 fixed left-0 top-0 shadow-sm  w-full z-20 bg-white'>
             <h1>JobHunt365</h1>
             <ul className='md:flex items-center gap-4 hidden'>
-              <Link to={'/'}>Home</Link>
-              <Link to={'/login'}>login</Link>
-              <Link to={'/register'}>register</Link>
+              <Link className='capitalize' to={'/'}>
+                Home
+              </Link>
+              <Link className='capitalize' to={'/login'}>
+                login
+              </Link>
+              <button onClick={() => handleRegister()} className='capitalize'>
+                register
+              </button>
             </ul>
             <button
               onClick={() => handleOpenSidebar()}
@@ -31,6 +41,16 @@ const Navbar = () => {
             </button>
           </nav>
         </div>
+        {register && (
+          <div className='flex w-[250px] absolute top-16 p-6 z-20 right-4 rounded-md bg-white shadow-xl flex-col'>
+            <Link className='capitalize' to={'/login'}>
+              Register as a Recriuter
+            </Link>
+            <Link className='capitalize' to={'/login'}>
+              Register as a user
+            </Link>
+          </div>
+        )}
       </header>
       <Outlet />
       <div>

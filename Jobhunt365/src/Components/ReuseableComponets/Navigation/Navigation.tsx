@@ -51,26 +51,7 @@ const Navigation = () => {
               <FaAlignRight />
             </button>
           </div>
-          <div className='hidden md:flex gap-6  items-center'>
-            {data.map((item) => {
-              return (
-                <Link
-                  className='capitalize hover:text-[#60a5fa] flex gap-2 items-center text-[#6b7280]'
-                  to={item.url}
-                  key={item.id}
-                >
-                  <item.icon /> {item.name}
-                </Link>
-              )
-            })}
-            <button
-              onClick={() => setOpenAddJob(!openAddJob)}
-              className='capitalize  hover:text-[#60a5fa] flex gap-2 items-center text-[#6b7280]'
-            >
-              <FaSquarePlus />
-              Add Job
-            </button>
-          </div>
+
           <div
             className='flex items-center gap-2 '
             onClick={() => setOpenDropDown(!openDropDown)}
