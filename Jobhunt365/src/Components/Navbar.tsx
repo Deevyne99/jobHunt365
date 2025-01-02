@@ -4,7 +4,6 @@ import { Link, Outlet } from 'react-router-dom'
 import { RiMenu3Line } from 'react-icons/ri'
 import Sidebar from './ReuseableComponets/Sidebar/Sidebar'
 import { useState } from 'react'
-useState
 
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false)

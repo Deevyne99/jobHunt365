@@ -37,7 +37,7 @@ const Navigation = () => {
     console.log('Selected option:', option)
   }
   return (
-    <header className='flex fixed z-20 h-[60px] flex-col  bg-white w-full shadow-sm'>
+    <header className='flex fixed z-40 h-[60px] left-0 top-0 flex-col  bg-white w-full shadow-sm'>
       <div className='flex flex-col'>
         <div className=' flex items-center py-2 justify-between mx-4 md:mx-8'>
           <div className='flex'>
