@@ -24,8 +24,8 @@ const Jobs = () => {
 
       <div className='flex w-full overflow-y-scroll'>
         <div className={`flex w-full  transition-margin duration-300`}>
-          <div className='flex  w-full mt-16 '>
-            <div className=' w-full   mt-6 flex flex-col md:px-4 px-4 max-h-screen  mb-4'>
+          <div className='flex  w-full mt-16 px-4 '>
+            <div className=' w-full   mt-6 flex flex-col max-h-screen  mb-4'>
               <div className='flex items-center gap-4 justify-center w-full'>
                 <button
                   className='bg-[#60a5fa] text-lg capitalize text-white p-2 rounded-md cursor-pointer md:hidden flex'
@@ -41,7 +41,7 @@ const Jobs = () => {
                   <FaSistrix className='font-bold text-lg' />
                 </button>
               </div>
-              <div className='w-full mt-4 grid 2xl:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center items-center md:mx-2 mx-0'>
+              <div className='w-full mt-4 grid 2xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center items-center md:mx-2 mx-0'>
                 <SuggestedJob />
                 <SuggestedJob />
                 <SuggestedJob />

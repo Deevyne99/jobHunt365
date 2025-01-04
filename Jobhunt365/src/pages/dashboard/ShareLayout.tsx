@@ -3,13 +3,25 @@
 import { Outlet } from 'react-router-dom'
 import Navigation from '../../Components/ReuseableComponets/Navigation/Navigation'
 import DashboardSideBar from '../../Components/ReuseableComponets/DashboardSideBar/DashboardSideBar'
+import { useState } from 'react'
 
 const ShareLayout = () => {
+  const [openSidebar, setSidebar] = useState(false)
+  const handleOpenSidebar = () => {
+    setSidebar(!openSidebar)
+  }
   return (
     <main className='relative flex w-full '>
-      <nav className='w-[25%]  '>
+      <nav
+        className={`${
+          openSidebar ? 'w-[25%]' : 'w-[80px]'
+        } transition-transform duration-500 `}
+      >
         <div className='full h-screen z-10 sticky top-0 left-0 '>
-          <DashboardSideBar />
+          <DashboardSideBar
+            handleOpenSidebar={handleOpenSidebar}
+            openSidebar={openSidebar}
+          />
         </div>
       </nav>
 

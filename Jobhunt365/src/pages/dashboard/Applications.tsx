@@ -1,11 +1,7 @@
 import { useState } from 'react'
-import FilterComponent from '../../Components/ReuseableComponets/FilterComponent/FilterComponent'
 import SmallFilterComponent from '../../Components/ReuseableComponets/FilterComponent/smallFilterComponent/SmallFilterComponent'
 import JobCard from '../../Components/ReuseableComponets/JobCard/JobCard'
-
-import SuggestedJob from '../../Components/ReuseableComponets/miniJobCard/SuggestedJob'
-import { FaGlobe, FaSliders, FaSistrix } from 'react-icons/fa6'
-
+import { FaSliders, FaSistrix } from 'react-icons/fa6'
 // import React from 'react'
 
 const Applications = () => {
