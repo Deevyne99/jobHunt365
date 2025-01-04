@@ -37,7 +37,7 @@ const Navigation = () => {
     console.log('Selected option:', option)
   }
   return (
-    <header className='flex fixed z-20 h-[60px] flex-col  bg-white w-full shadow-sm'>
+    <header className='flex fixed z-40 h-[60px] left-0 top-0 flex-col  bg-white w-full shadow-sm'>
       <div className='flex flex-col'>
         <div className=' flex items-center py-2 justify-between mx-4 md:mx-8'>
           <div className='flex'>
@@ -51,26 +51,7 @@ const Navigation = () => {
               <FaAlignRight />
             </button>
           </div>
-          <div className='hidden md:flex gap-6  items-center'>
-            {data.map((item) => {
-              return (
-                <Link
-                  className='capitalize hover:text-[#60a5fa] flex gap-2 items-center text-[#6b7280]'
-                  to={item.url}
-                  key={item.id}
-                >
-                  <item.icon /> {item.name}
-                </Link>
-              )
-            })}
-            <button
-              onClick={() => setOpenAddJob(!openAddJob)}
-              className='capitalize  hover:text-[#60a5fa] flex gap-2 items-center text-[#6b7280]'
-            >
-              <FaSquarePlus />
-              Add Job
-            </button>
-          </div>
+
           <div
             className='flex items-center gap-2 '
             onClick={() => setOpenDropDown(!openDropDown)}

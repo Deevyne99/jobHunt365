@@ -9,8 +9,8 @@ import {
 } from 'react-icons/fa6'
 import google from '../../../assets/google.png'
 
-const JobCard = () => {
-  const [status, setStatus] = useState('Pending')
+const JobCard = ({ JobStatus }: { JobStatus: string }) => {
+  const [status] = useState(JobStatus)
   const [modal, setModal] = useState(false)
 
   return (
@@ -19,7 +19,7 @@ const JobCard = () => {
         <div className='flex items-center gap-4 w-full'>
           <LogoComponent company='xoogle' imageUrl={google} />
           <div className='flex flex-col '>
-            <h2 className='font-bold text-[#4b5563]  max-w-[270px]'>
+            <h2 className='font-bold text-[#4b5563]  max-w-[150px] truncate'>
               Senior Frontend Developer
             </h2>
             <p className='text-sm text-[#94a3b8]'>Goldman Sach</p>
