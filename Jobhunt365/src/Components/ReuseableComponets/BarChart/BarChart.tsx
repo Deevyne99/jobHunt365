@@ -1,58 +1,80 @@
-// import React from 'react'
-import { Bar } from 'react-chartjs-2'
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
+  BarChart,
+  Bar,
+  YAxis,
+  CartesianGrid,
   Tooltip,
   Legend,
-  Filler,
-} from 'chart.js'
+  ResponsiveContainer,
+} from 'recharts'
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  Filler
-)
+const data = [
+  {
+    name: 'Page A',
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: 'Page B',
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: 'Page C',
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'Page D',
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'Page E',
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: 'Page F',
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: 'Page G',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+]
 
-const BarChart = () => {
-  const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-      {
-        label: 'Dataset 1',
-        data: [65, 59, 80, 81, 56, 55, 40],
-        fill: true,
-        backgroundColor: 'rgba(75,192,192,0.7)',
-        borderColor: 'rgba(75,192,192,1)',
-      },
-    ],
-  }
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-      },
-      title: {
-        display: true,
-        text: 'Area Chart',
-      },
-    },
-  }
-
+export default function BarChartComponent() {
   return (
-    <div className=' w-full mx-auto flex justify-center  py-8 p-4 rounded-lg  bg-white h-full shadow-md'>
-      <Bar data={data} options={options} />
+    <div className='w-full'>
+      <ResponsiveContainer width={'100%'} height={300}>
+        <BarChart
+          data={data}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray='3 3' />
+          {/* <XAxis dataKey="name" /> */}
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey='pv' stackId='a' fill='#8884d8' />
+          <Bar dataKey='uv' stackId='a' fill='#eee' />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   )
 }
-
-export default BarChart
