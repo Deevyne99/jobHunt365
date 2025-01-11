@@ -5,11 +5,12 @@ import SmallFilterComponent from '../../Components/ReuseableComponets/FilterComp
 import SuggestedJob from '../../Components/ReuseableComponets/miniJobCard/SuggestedJob'
 import { FaSliders, FaSistrix } from 'react-icons/fa6'
 import DashboardSideBar from '../../Components/ReuseableComponets/DashboardSideBar/DashboardSideBar'
+// import Modal from '../../Components/ReuseableComponets/Modal/Modal'
 DashboardSideBar
-// import { Link } from 'react-router-dom'
 
 const Jobs = () => {
   const [openFilter, setOpenFilter] = useState(false)
+
   // const [isSidebarExpanded, setIsSidebarExpanded] = useState(false)
 
   const handleOpenFilter = () => setOpenFilter(!openFilter)
@@ -40,6 +41,9 @@ const Jobs = () => {
                 <button className='text-white text-lg capitalize bg-[#60a5fa] p-2 rounded-md cursor-pointer'>
                   <FaSistrix className='font-bold text-lg' />
                 </button>
+                <div>
+                  <button onClick={() => {}}>add job</button>
+                </div>
               </div>
               <div className='w-full mt-4 grid 2xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center items-center md:mx-2 mx-0'>
                 <SuggestedJob />
