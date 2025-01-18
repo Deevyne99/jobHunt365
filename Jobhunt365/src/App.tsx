@@ -29,9 +29,9 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/dashboard/' element={<ShareLayout />}>
-          <Route index element={<Jobs />} />
+          <Route index element={<Stats />} />
           <Route path='applications' element={<Applications />} />
-          <Route path='stat' element={<Stats />} />
+          <Route path='jobs' element={<Jobs />} />
           <Route path='profile' element={<Profile />} />
         </Route>
         <Route path='/admin/dashboard/' element={<ProtectedRoute />}>

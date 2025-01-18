@@ -1,6 +1,6 @@
 import Navigation from '../../Components/ReuseableComponets/Navigation/Navigation'
 import avatarImg from '../../assets/woman-4.jpg'
-import React, { useState, useRef, ChangeEvent } from 'react'
+import { useState, useRef, ChangeEvent } from 'react'
 
 const Profile = () => {
   const [avatar, setAvatar] = useState(avatarImg)

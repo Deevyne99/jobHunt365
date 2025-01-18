@@ -25,7 +25,7 @@ const Applications = () => {
         <div className={`flex w-full  transition-margin duration-300`}>
           <div className='flex  w-full mt-16 '>
             <div className=' w-full   mt-6 flex flex-col md:px-4 px-4 max-h-screen  mb-4'>
-              <div className='flex items-center gap-4 justify-center w-full'>
+              <div className='flex items-center gap-2 justify-center w-full'>
                 <button
                   className='bg-[#60a5fa] text-lg capitalize text-white p-2 rounded-md cursor-pointer md:hidden flex'
                   onClick={() => handleOpenFilter()}
@@ -34,12 +34,23 @@ const Applications = () => {
                 </button>
                 <input
                   type='text'
-                  className=' w-[93%] p-2 border-gray-100 focus:border-[#3b82f6] outline-none rounded-md border'
+                  className=' w-[85%] p-2 border-gray-100 focus:border-[#3b82f6] outline-none rounded-md border'
                 />
                 <button className='text-white text-lg capitalize bg-[#60a5fa] p-2 rounded-md cursor-pointer'>
                   <FaSistrix className='font-bold text-lg' />
                 </button>
-                <button onClick={() => handleOpenAddJob()}>Add job</button>
+                <button
+                  className='bg-[#60a5fa] p-2 text-white capitalize rounded-md'
+                  onClick={() => handleOpenAddJob()}
+                >
+                  <FaSistrix />
+                </button>
+                <button
+                  className='bg-[#60a5fa] p-2 text-white capitalize rounded-md'
+                  onClick={() => handleOpenAddJob()}
+                >
+                  add job
+                </button>
               </div>
               <Modal openModal={openAddJob}>
                 <FormComponent

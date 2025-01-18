@@ -36,13 +36,18 @@ const Jobs = () => {
                 </button>
                 <input
                   type='text'
-                  className=' w-[93%] p-2 border-gray-100 focus:border-[#3b82f6] outline-none rounded-md border'
+                  className=' w-[85%] p-2 border-gray-100 focus:border-[#3b82f6] outline-none rounded-md border'
                 />
                 <button className='text-white text-lg capitalize bg-[#60a5fa] p-2 rounded-md cursor-pointer'>
                   <FaSistrix className='font-bold text-lg' />
                 </button>
                 <div>
-                  <button onClick={() => {}}>add job</button>
+                  <button
+                    className='bg-[#60a5fa] p-2 text-white capitalize rounded-md'
+                    onClick={() => {}}
+                  >
+                    add job
+                  </button>
                 </div>
               </div>
               <div className='w-full mt-4 grid 2xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center items-center md:mx-2 mx-0'>

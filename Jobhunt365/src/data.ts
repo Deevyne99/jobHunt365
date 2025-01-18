@@ -5,14 +5,14 @@ import { SlCalender } from 'react-icons/sl'
 import { MdDashboard } from 'react-icons/md'
 import { IoSearchOutline } from 'react-icons/io5'
 export const data = [
-  { name: 'jobs', url: '/dashboard/', id: 1, icon: FaBriefcase },
+  { name: 'stat', url: '/dashboard/', id: 3, icon: FaSignal },
+  { name: 'jobs', url: '/dashboard/jobs', id: 1, icon: FaBriefcase },
   {
     name: 'Applications',
     url: '/dashboard/applications',
     id: 2,
     icon: FaPaperPlane,
   },
-  { name: 'stat', url: '/dashboard/stat', id: 3, icon: FaSignal },
   { name: 'profile', url: '/dashboard/profile', id: 4, icon: FaUser },
 ]
 
