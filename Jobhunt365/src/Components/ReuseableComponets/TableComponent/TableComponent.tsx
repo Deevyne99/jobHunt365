@@ -3,9 +3,9 @@
 import { useState } from 'react'
 
 const TableComponent = () => {
-  const [status, setStatus] = useState('pending')
+  // const [status, setStatus] = useState('pending')
   return (
-    <div>
+    <div className='flex flex-col'>
       <div className='flex overflow-x-auto flex-col bg-white shadow-lg rounded-lg w-full'>
         <div className='flex justify-between py-3 px-4  '>
           <div className='flex h-[40px] w-[200px] '>

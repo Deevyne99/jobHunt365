@@ -4,7 +4,7 @@ import JobCard from '../../Components/ReuseableComponets/JobCard/JobCard'
 import { FaSliders, FaSistrix } from 'react-icons/fa6'
 import Modal from '../../Components/ReuseableComponets/Modal/Modal'
 import FormComponent from '../../Components/ReuseableComponets/FormComponent/FormComponent'
-Modal
+import { FaOutdent } from 'react-icons/fa'
 // import React from 'react'
 
 const Applications = () => {
@@ -43,7 +43,7 @@ const Applications = () => {
                   className='bg-[#60a5fa] p-2 text-white capitalize rounded-md'
                   onClick={() => handleOpenAddJob()}
                 >
-                  <FaSistrix />
+                  <FaOutdent />
                 </button>
                 <button
                   className='bg-[#60a5fa] p-2 text-white capitalize rounded-md'
