@@ -41,7 +41,7 @@ const Applications = () => {
                 </button>
                 <button
                   className='bg-[#60a5fa] p-2 text-white capitalize rounded-md'
-                  onClick={() => handleOpenAddJob()}
+                  onClick={() => handleOpenFilter()}
                 >
                   <FaOutdent />
                 </button>

@@ -28,7 +28,7 @@ const Home = () => {
     return () => clearInterval(slider)
   }, [productIndex])
   return (
-    <div className='flex  flex-col bg-white w-full overflow-hidden'>
+    <div className='flex  flex-col bg-white  w-full overflow-hidden'>
       <div className='flex flex-col md:h-[400px] h-[600px]  w-full gap-4 md:gap-8 mt-16 md:mt-24  mx-4 md:mx-12  relative items-center justify-center '>
         {slider.map((item, index) => {
           const { id, image, descp, title } = item

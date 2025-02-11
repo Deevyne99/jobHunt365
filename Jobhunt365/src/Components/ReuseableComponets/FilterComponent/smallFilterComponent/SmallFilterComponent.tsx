@@ -17,28 +17,24 @@ const SmallFilterComponent = ({
     <div
       className={` ${
         openFilter
-          ? 'flex md:hidden fixed h-full z-10 w-full bg-[#000] bg-opacity-5 backdrop-blur-sm'
-          : 'w-0  '
+          ? 'flex  absolute  top-36 right-12 z-10 w-[300px] bg-white'
+          : 'hidden'
       }`}
     >
-      <aside
-        className={`flex z-20 transform duration-300 ${
-          openFilter ? 'translate-x-0' : 'translate-x-[-300px]'
-        }   md:hidden fixed top-0 h-full bg-white w-[270px] sm:w-[300px] left-0`}
-      >
-        <section className='w-full  p-2 max-h-screen overflow-y-scroll'>
-          <aside className='p-4 flex flex-col w-full min-h-screen gap-6 bg-white rounded-md '>
-            <div className='mt-12 flex flex-col gap-4    w-full'>
-              <button
-                className='text-light-blue text-lg ml-auto '
-                onClick={() => handleOpenFilter()}
-              >
-                <FiX />
-              </button>
-              <button className='text-sm text-[#3b82f6] font-semibold mr-auto'>
-                Clear All
-              </button>
-            </div>
+      <section className='w-full  p-2 max-h-screen overflow-y-scroll overflow-x-hidden'>
+        <aside className='p-4 flex flex-col w-full min-h-screen gap-6 bg-white rounded-md '>
+          <div className='mt-12 flex flex-col gap-4    w-full'>
+            <button
+              className='text-light-blue text-lg ml-auto '
+              onClick={() => handleOpenFilter()}
+            >
+              <FiX />
+            </button>
+            <button className='text-sm text-[#3b82f6] font-semibold mr-auto'>
+              Clear All
+            </button>
+          </div>
+          <div className='grid  gap-4'>
             <div>
               <h2 className='capitalize text-md text-[#6b7280] font-bold'>
                 Filters
@@ -54,12 +50,12 @@ const SmallFilterComponent = ({
                 id='salary'
                 min={100}
                 max={2000}
-                className='border-none'
+                className='border-none w-[200px]'
               />
               <p className='text-sm font-normal text-[#6b7280]'>$3,000</p>
             </div>
             <div className='flex flex-col gap-4'>
-              <div className='flex justify-between items-center'>
+              <div className='flex gap-4 items-center'>
                 <h3 className='capitalize text-sm text-[#6b7280] font-semibold'>
                   Job Type
                 </h3>
@@ -113,7 +109,7 @@ const SmallFilterComponent = ({
             </div>
 
             <div className='flex flex-col gap-4'>
-              <div className='flex justify-between items-center'>
+              <div className='flex w-[300px] gap-4 items-center'>
                 <h3 className='capitalize text-sm text-[#6b7280] font-semibold'>
                   Job Location
                 </h3>
@@ -157,7 +153,7 @@ const SmallFilterComponent = ({
               )}
             </div>
             <div className='flex flex-col gap-4'>
-              <div className='flex justify-between items-center'>
+              <div className='flex gap-4 items-center'>
                 <h3 className='capitalize text-sm text-[#6b7280] font-semibold'>
                   Status
                 </h3>
@@ -250,9 +246,9 @@ const SmallFilterComponent = ({
                 </label>
               </div>
             </div>
-          </aside>
-        </section>
-      </aside>
+          </div>
+        </aside>
+      </section>
     </div>
   )
 }
