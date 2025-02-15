@@ -14,7 +14,7 @@ const Features = ({
   name: string
 }) => {
   return (
-    <div className='flex flex-col  border border-[#ccc]  p-4 w-[300px] h-[250px] justify-center items-center rounded-md '>
+    <div className='flex flex-col  shadow-xl  p-4 w-[300px] h-[250px] justify-center items-center  '>
       {id === 1 ? (
         <div className=' flex flex-col bg-[#f0f9ff] p-2 w-[40px] h-[40px] rounded-[50%] justify-center items-center'>
           <FaFileSignature className=' text-[#0284c7] text-xl' />
