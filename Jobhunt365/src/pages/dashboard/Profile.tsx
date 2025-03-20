@@ -18,6 +18,10 @@ const Profile = () => {
     }
   }
 
+  const handleSubmit = () => {
+    console.log('hello world')
+  }
+
   const handleAction = () => {
     setOpenEditProfile(!openeditProfile)
   }
@@ -202,7 +206,8 @@ const Profile = () => {
               openeditProfile ? '    translate-x-0 ' : 'translate-x-full '
             }`}
           >
-            <div className='flex flex-col md:flex-row gap-6 w-full  '>
+            <button onClick={() => setOpenEditProfile(false)}>close</button>
+            <div className='flex flex-col md:flex-row gap-6 w-full mt-4 '>
               <div className='w-full md:w-1/2'>
                 <InputComponent label='First Name' />
               </div>
@@ -222,17 +227,23 @@ const Profile = () => {
               <div className='w-full md:w-1/2'>
                 <InputComponent label='Country' />
               </div>
-              <div className='w-full w-1/2'>
+              <div className='w-full'>
                 <InputComponent label='City' />
               </div>
             </div>
-            <div className='flex w-full'>
+            <div className='flex w-full flex-col gap-1'>
+              <label htmlFor='' className='capitalize'>
+                description
+              </label>
               <textarea
                 className='w-full border border-gray-100'
                 name=''
                 id=''
                 rows={4}
               ></textarea>
+            </div>
+            <div>
+              <Button label='Save' handleAction={() => handleSubmit()} />
             </div>
           </div>
         </Modal>
