@@ -15,7 +15,7 @@ const ShareLayout = () => {
       <nav
         className={`${
           openSidebar ? 'w-[20%]' : 'w-[60px]'
-        } transition-transform duration-500 `}
+        } transition-transform duration-500  md:flex hidden`}
       >
         <div className='full h-screen z-10 sticky top-0 left-0 '>
           <DashboardSideBar

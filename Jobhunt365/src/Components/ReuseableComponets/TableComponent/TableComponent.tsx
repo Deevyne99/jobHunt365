@@ -5,12 +5,14 @@
 const TableComponent = () => {
   // const [status, setStatus] = useState('pending')
   return (
-    <div className='flex flex-col'>
-      <div className='flex overflow-x-auto flex-col bg-white shadow-lg rounded-lg w-full'>
+    <div className='flex flex-col w-full '>
+      <div className='flex overflow-hidden flex-col bg-white shadow-lg rounded-lg w-full'>
         <div className='flex justify-between py-3 px-4  '>
-          <div className='flex h-[40px] w-[200px] '>
+          {/* Search bar */}
+          <div className='flex h-[40px] w-[300px] '>
             <input
               type='text'
+              placeholder='Search...'
               className='w-full h-full px-1 rounded-md border-gray-100 border'
             />
           </div>
@@ -20,6 +22,7 @@ const TableComponent = () => {
           </div>
         </div>
         <div className='overflow-x-auto '>
+          {/* Table */}
           <table className='min-w-full border-collapse  border-gray-100 '>
             <thead>
               <tr className='bg-[#fafafa] border-gray-100 text-sm text-[#6b7280] font-bold'>
@@ -39,6 +42,51 @@ const TableComponent = () => {
               </tr>
             </thead>
             <tbody>
+              <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
+                <td className='p-2 md:p-4 hidden md:flex'>1</td>
+                <td className='p-2 md:p-4 hidden md:table-cell '>ORD12345</td>
+                <td className='p-2 md:p-4'>Bags</td>
+                <td className='p-2 md:p-4'>10</td>
+                <td className='p-2 md:p-4 hidden md:flex'>10 Aug 2024</td>
+
+                <td className='p-2 capitalize md:p-4'>view</td>
+              </tr>
+              <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
+                <td className='p-2 md:p-4 hidden md:flex'>1</td>
+                <td className='p-2 md:p-4 hidden md:table-cell '>ORD12345</td>
+                <td className='p-2 md:p-4'>Bags</td>
+                <td className='p-2 md:p-4'>10</td>
+                <td className='p-2 md:p-4 hidden md:flex'>10 Aug 2024</td>
+
+                <td className='p-2 capitalize md:p-4'>view</td>
+              </tr>
+              <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
+                <td className='p-2 md:p-4 hidden md:flex'>1</td>
+                <td className='p-2 md:p-4 hidden md:table-cell '>ORD12345</td>
+                <td className='p-2 md:p-4'>Bags</td>
+                <td className='p-2 md:p-4'>10</td>
+                <td className='p-2 md:p-4 hidden md:flex'>10 Aug 2024</td>
+
+                <td className='p-2 capitalize md:p-4'>view</td>
+              </tr>
+              <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
+                <td className='p-2 md:p-4 hidden md:flex'>1</td>
+                <td className='p-2 md:p-4 hidden md:table-cell '>ORD12345</td>
+                <td className='p-2 md:p-4'>Bags</td>
+                <td className='p-2 md:p-4'>10</td>
+                <td className='p-2 md:p-4 hidden md:flex'>10 Aug 2024</td>
+
+                <td className='p-2 capitalize md:p-4'>view</td>
+              </tr>
+              <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
+                <td className='p-2 md:p-4 hidden md:flex'>1</td>
+                <td className='p-2 md:p-4 hidden md:table-cell '>ORD12345</td>
+                <td className='p-2 md:p-4'>Bags</td>
+                <td className='p-2 md:p-4'>10</td>
+                <td className='p-2 md:p-4 hidden md:flex'>10 Aug 2024</td>
+
+                <td className='p-2 capitalize md:p-4'>view</td>
+              </tr>
               <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
                 <td className='p-2 md:p-4 hidden md:flex'>1</td>
                 <td className='p-2 md:p-4 hidden md:table-cell '>ORD12345</td>
