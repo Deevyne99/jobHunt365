@@ -10,14 +10,14 @@ const Login = () => {
         <h1 className='capitalize text-2xl'>jobhunt365</h1>
       </header>
       <div className='flex  flex-col gap-6 mt-4 mx-auto  justify-center items-center  w-full max-w-[400px]'>
-        <div className='w-[90%] '>
+        <div className='w-full '>
           <InputComponent label={'email'} />
         </div>
-        <div className='w-[90%] '>
+        <div className='w-full '>
           <InputComponent label={'Password'} />
         </div>
 
-        <div className='w-[90%]'>
+        <div className='w-full'>
           <Button label='Login' />
         </div>
         <div>

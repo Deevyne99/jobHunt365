@@ -19,7 +19,7 @@ const DashboardSideBar = ({ openSidebar, handleOpenSidebar }: SidebarProps) => {
                     
                   capitalize hover:text-[#60a5fa] flex gap-2 items-center text-[#6b7280] w-full ${
                     item.name === 'jobs' ? '' : ''
-                  }  p-3`}
+                  }  `}
                   to={item.url}
                   key={item.id}
                 >

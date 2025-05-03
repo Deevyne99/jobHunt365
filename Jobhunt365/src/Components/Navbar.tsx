@@ -41,12 +41,12 @@ const Navbar = () => {
           </nav>
         </div>
         {register && (
-          <div className='flex w-[250px] absolute top-16 p-6 z-20 right-4 rounded-md bg-white shadow-xl flex-col'>
-            <Link className='capitalize' to={'/login'}>
+          <div className='flex w-[250px] absolute top-16 p-6 z-20 right-4 rounded-md bg-white shadow-xl flex-col gap-4 '>
+            <Link className='text-[#94a3b8] ' to={'/register-agent'}>
               Register as a Recriuter
             </Link>
-            <Link className='capitalize' to={'/login'}>
-              Register as a user
+            <Link className='text-[#94a3b8]' to={'/register'}>
+              Register as a User
             </Link>
           </div>
         )}

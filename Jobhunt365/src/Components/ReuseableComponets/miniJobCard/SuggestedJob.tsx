@@ -7,6 +7,7 @@ import {
   FaBriefcase,
   FaRegCalendarDays,
 } from 'react-icons/fa6'
+import Button from '../ButtonComponent/Button'
 const SuggestedJob = () => {
   return (
     <div className='flex flex-col w-full bg-white h-[250px] p-4 rounded-md'>
@@ -56,9 +57,9 @@ const SuggestedJob = () => {
           <p className='text-sm text-[#6b7280]'>Remote</p>
         </div>
       </div>
-      <button className='p-2 flex justify-center items-center mt-4 bg-[#60a5fa] text-white font-semibold rounded-md w-[100px]'>
-        Apply
-      </button>
+      <div className='w-[100px]'>
+        <Button label='apply' />
+      </div>
     </div>
   )
 }

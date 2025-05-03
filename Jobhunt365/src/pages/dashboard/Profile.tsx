@@ -1,10 +1,14 @@
+import Button from '../../Components/ReuseableComponets/ButtonComponent/Button'
+import InputComponent from '../../Components/ReuseableComponets/InputComponent/InputComponent'
+import Modal from '../../Components/ReuseableComponets/Modal/Modal'
 import Navigation from '../../Components/ReuseableComponets/Navigation/Navigation'
 import avatarImg from '../../assets/woman-4.jpg'
-import React, { useState, useRef, ChangeEvent } from 'react'
+import { useState, useRef, ChangeEvent } from 'react'
 
 const Profile = () => {
   const [avatar, setAvatar] = useState(avatarImg)
   const fileInputRef = useRef<HTMLInputElement | null>(null)
+  const [openeditProfile, setOpenEditProfile] = useState(false)
 
   const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
@@ -12,6 +16,14 @@ const Profile = () => {
       const imageUrl = URL.createObjectURL(file)
       setAvatar(imageUrl)
     }
+  }
+
+  const handleSubmit = () => {
+    console.log('hello world')
+  }
+
+  const handleAction = () => {
+    setOpenEditProfile(!openeditProfile)
   }
   const techSkills = [
     // Programming Languages
@@ -137,6 +149,9 @@ const Profile = () => {
                 <p className='text-sm'>kaludivine545@gmail.com</p>
               </div>
             </div>
+            <div>
+              <Button label='Edit Profile' handleAction={handleAction} />
+            </div>
           </div>
           <div className='mt-4 flex flex-col '>
             <h1>About</h1>
@@ -185,6 +200,53 @@ const Profile = () => {
             </div>
           </div>
         </div>
+        <Modal openModal={openeditProfile}>
+          <div
+            className={` transition-transform ease-out duration-300 fixed top-0 right-0  p-4 gap-6 flex flex-col bg-white h-full max-w-[450px] w-[90%] overflow-y-scroll ${
+              openeditProfile ? '    translate-x-0 ' : 'translate-x-full '
+            }`}
+          >
+            <button onClick={() => setOpenEditProfile(false)}>close</button>
+            <div className='flex flex-col md:flex-row gap-6 w-full mt-4 '>
+              <div className='w-full md:w-1/2'>
+                <InputComponent label='First Name' />
+              </div>
+              <div className='w-full md:w-1/2'>
+                <InputComponent label='First Name' />
+              </div>
+            </div>
+            <div className='flex  flex-col md:flex-row gap-6 w-full'>
+              <div className='w-full md:w-1/2'>
+                <InputComponent label='Email' />
+              </div>
+              <div className='w-full md:w-1/2'>
+                <InputComponent label='Phone Number' />
+              </div>
+            </div>
+            <div className='flex flex-col md:flex-row gap-6 w-full'>
+              <div className='w-full md:w-1/2'>
+                <InputComponent label='Country' />
+              </div>
+              <div className='w-full'>
+                <InputComponent label='City' />
+              </div>
+            </div>
+            <div className='flex w-full flex-col gap-1'>
+              <label htmlFor='' className='capitalize'>
+                description
+              </label>
+              <textarea
+                className='w-full border border-gray-100'
+                name=''
+                id=''
+                rows={4}
+              ></textarea>
+            </div>
+            <div>
+              <Button label='Save' handleAction={() => handleSubmit()} />
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   )
