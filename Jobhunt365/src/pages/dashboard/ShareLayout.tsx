@@ -17,7 +17,7 @@ const ShareLayout = () => {
           openSidebar ? 'w-[20%]' : 'w-[60px]'
         } transition-transform duration-500  md:flex hidden`}
       >
-        <div className='full h-screen z-10 sticky top-0 left-0 '>
+        <div className='full w-full h-screen z-10 sticky top-0 left-0 '>
           <DashboardSideBar
             handleOpenSidebar={handleOpenSidebar}
             openSidebar={openSidebar}

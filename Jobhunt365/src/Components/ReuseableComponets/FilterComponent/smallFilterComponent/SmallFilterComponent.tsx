@@ -15,10 +15,8 @@ const SmallFilterComponent = ({
   const [status, setStatus] = useState(false)
   return (
     <div
-      className={` ${
-        openFilter
-          ? 'flex  absolute  top-36 right-12 z-10 w-[300px] bg-white'
-          : 'hidden'
+      className={`transition-transform ease-out duration-300 fixed top-0 right-0  p-4 gap-6 flex flex-col bg-white h-full max-w-[300px] w-[90%] overflow-y-scroll ${
+        openFilter ? '    translate-x-0 ' : 'translate-x-full '
       }`}
     >
       <section className='w-full  p-2 max-h-screen overflow-y-scroll overflow-x-hidden'>

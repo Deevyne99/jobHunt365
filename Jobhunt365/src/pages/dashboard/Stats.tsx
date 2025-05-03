@@ -7,7 +7,7 @@ import TableComponent from '../../Components/ReuseableComponets/TableComponent/T
 
 const Stats = () => {
   return (
-    <div className='flex flex-col mb-4'>
+    <div className='flex flex-col mb-4 '>
       <section className='flex flex-col mx-4 mt-16 md:mx-8  '>
         <div className='mt-4 grid-cols-1 grid lg:grid-cols-4 items-center gap-4 md:grid-cols-2  justify-between'>
           <AnalyticsCard status='Pending' />

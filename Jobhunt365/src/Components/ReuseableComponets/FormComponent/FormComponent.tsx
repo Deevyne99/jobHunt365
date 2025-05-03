@@ -111,7 +111,7 @@ const FormComponent = ({
             </button> */}
       </div>
       <div className='mt-6'>
-        <Button label='Add Job' />
+        <Button handleAction={() => {}} label='Add Job' />
       </div>
     </div>
   )

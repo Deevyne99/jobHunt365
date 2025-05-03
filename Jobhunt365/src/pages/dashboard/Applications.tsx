@@ -16,10 +16,12 @@ const Applications = () => {
   const handleOpenFilter = () => setOpenFilter(!openFilter)
   return (
     <div className='flex flex-col w-full  relative '>
-      <SmallFilterComponent
-        openFilter={openFilter}
-        handleOpenFilter={handleOpenFilter}
-      />
+      <Modal openModal={openFilter}>
+        <SmallFilterComponent
+          openFilter={openFilter}
+          handleOpenFilter={handleOpenFilter}
+        />
+      </Modal>
 
       <div className='flex w-full overflow-y-scroll'>
         <div className={`flex w-full  transition-margin duration-300`}>
