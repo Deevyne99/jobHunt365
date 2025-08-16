@@ -123,3 +123,31 @@ export const jobCategories = [
     examples: ['Lawyer', 'Paralegal', 'Legal Consultant'],
   },
 ]
+
+export const userData = [
+  {
+    name: "Aurora",
+    story:
+      "Aurora is a curious traveler who wanders through enchanted forests, seeking hidden magic, ancient secrets, and forgotten songs whispered only by the trees under moonlight.",
+    image: "/landing-page.png",
+  },
+  {
+    name: "Kai",
+    story:
+      "Kai is an inventive dreamer who builds peculiar gadgets from scraps. Each creation holds a spark of wonder, designed to solve problems and inspire unexpected adventures.",
+    image: "/landing-page.png",
+  },
+  {
+    name: "Luna",
+    story:
+      "Luna spends her nights painting the skies with colors unseen. Her brush captures constellations, turning silence into art that whispers comfort across the midnight horizon.",
+    image: "/landing-page.png",
+  },
+  {
+    name: "Orion",
+    story:
+      "Orion is a wandering storyteller who carries ancient myths in memory. Wherever he roams, tales of bravery and love bloom, binding strangers together in timeless wonder.",
+    image: "/landing-page.png",
+  }
+  
+];
