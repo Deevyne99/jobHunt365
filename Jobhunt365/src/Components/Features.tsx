@@ -33,8 +33,8 @@ const Features = ({
         </div>
       ) : null}
 
-      <h3 className='text-md font-bold text-[#94a3b8] mt-4'>{name}</h3>
-      <p className='tracking-wide leading-normal text-[#94a3b8] mt-2 text-center'>
+      <h3 className='text-md font-bold  mt-4'>{name}</h3>
+      <p className='tracking-wide leading-normal mt-2 text-center'>
         {description}
       </p>
     </div>
