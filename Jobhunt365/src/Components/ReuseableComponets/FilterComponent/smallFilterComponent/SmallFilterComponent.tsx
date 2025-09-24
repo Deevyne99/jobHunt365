@@ -21,7 +21,7 @@ const SmallFilterComponent = ({
     >
       <section className='w-full  p-2 max-h-screen overflow-y-scroll overflow-x-hidden'>
         <aside className='p-4 flex flex-col w-full min-h-screen gap-6 bg-white rounded-md '>
-          <div className='mt-12 flex flex-col gap-4    w-full'>
+          <div className='mt-0 flex flex-col gap-4    w-full'>
             <button
               className='text-light-blue text-lg ml-auto '
               onClick={() => handleOpenFilter()}

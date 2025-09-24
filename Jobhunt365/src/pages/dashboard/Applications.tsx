@@ -28,21 +28,35 @@ const Applications = () => {
           <div className='flex  w-full mt-16 '>
             <div className=' w-full   mt-6 flex flex-col md:px-4 px-4 max-h-screen  mb-4'>
               <div className='flex items-center gap-2 justify-center w-full'>
-                <button
+                {/* <button
                   className='bg-[#60a5fa] text-lg capitalize text-white p-2 rounded-md cursor-pointer md:hidden flex'
                   onClick={() => handleOpenFilter()}
                 >
                   <FaSliders />
-                </button>
+                </button> */}
                 <input
                   type='text'
-                  className=' w-[85%] p-2 border-gray-100 focus:border-[#3b82f6] outline-none rounded-md border'
+                  className=' w-[80%] p-2 border-gray-100 focus:border-[#3b82f6] outline-none rounded-md border'
                 />
                 <button className='text-white text-lg capitalize bg-[#60a5fa] p-2 rounded-md cursor-pointer'>
                   <FaSistrix className='font-bold text-lg' />
                 </button>
                 <button
-                  className='bg-[#60a5fa] p-2 text-white capitalize rounded-md'
+                  className='bg-[#60a5fa] p-2 text-white capitalize rounded-md hidden md:flex'
+                  onClick={() => handleOpenFilter()}
+                >
+                  <FaOutdent />
+                </button>
+                <button
+                  className='bg-[#60a5fa] p-2 text-white capitalize rounded-md hidden md:flex'
+                  onClick={() => handleOpenAddJob()}
+                >
+                  add job
+                </button>
+              </div>
+                <div className='flex md:hidden mt-4 justify-between'>
+                  <button
+                  className='bg-[#60a5fa] p-1 w-[40px] justify-center items-center text-white capitalize rounded-md flex md:hidden'
                   onClick={() => handleOpenFilter()}
                 >
                   <FaOutdent />
@@ -53,10 +67,10 @@ const Applications = () => {
                 >
                   add job
                 </button>
-              </div>
+                </div>
               <Modal openModal={openAddJob}>
                 <FormComponent
-                  openAddJob={openAddJob}
+                  openAddJob={openAddJob} 
                   handleOpenAddJob={handleOpenAddJob}
                 />
               </Modal>

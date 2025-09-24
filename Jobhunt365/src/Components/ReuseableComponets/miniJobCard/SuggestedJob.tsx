@@ -14,18 +14,18 @@ const SuggestedJob = () => {
       <div className='flex justify-between items-center'>
         <div className='flex items-center gap-2 w-full'>
           <LogoComponent company='zoogle' imageUrl={google} />
-          <h1 className='text-md font-bold text-[#4b5563] truncate'>
+          <h4 className='text-md font-bold text-[#4b5563] truncate'>
             Goldman Sach
-          </h1>
+          </h4>
         </div>
         <button>
           <FaEllipsisVertical className='text-gray-100 text-xl ' />
         </button>
       </div>
       <div className='flex flex-col mt-2'>
-        <h2 className='truncate max-w-[270px] text-sm text-[#94a3b8]'>
+        <h5 className='truncate max-w-[270px] text-sm text-[#94a3b8]'>
           Senior Frontend Developer
-        </h2>
+        </h5>
       </div>
       <div className='flex items-center mt-4 justify-between'>
         <div className='flex gap-[6px] items-center'>
@@ -58,7 +58,7 @@ const SuggestedJob = () => {
         </div>
       </div>
       <div className='w-[100px]'>
-        <Button label='apply' />
+        <Button label='apply' handleAction={()=>{}}/>
       </div>
     </div>
   )

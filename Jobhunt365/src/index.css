@@ -22,3 +22,19 @@ body,
     @apply bg-[#f5f7fb]; /* Replace with any Tailwind color class */
   }
 }
+
+p{
+  @apply text-sm text-[#4b5563];
+}
+h1{
+  @apply text-3xl font-bold text-[#4b5563];
+}
+h2{
+  @apply  font-semibold text-[#4b5563];
+}
+h3{
+  @apply  font-semibold text-[#4b5563];
+}
+h5{
+  @apply  font-semibold text-[#4b5563];
+}
