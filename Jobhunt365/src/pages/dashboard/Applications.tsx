@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SmallFilterComponent from '../../Components/ReuseableComponets/FilterComponent/smallFilterComponent/SmallFilterComponent'
 import JobCard from '../../Components/ReuseableComponets/JobCard/JobCard'
-import { FaSliders, FaSistrix } from 'react-icons/fa6'
+import {  FaSistrix } from 'react-icons/fa6'
 import Modal from '../../Components/ReuseableComponets/Modal/Modal'
 import FormComponent from '../../Components/ReuseableComponets/FormComponent/FormComponent'
 import { FaOutdent } from 'react-icons/fa'

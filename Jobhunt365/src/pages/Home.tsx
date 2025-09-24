@@ -5,7 +5,7 @@ import image_1 from '../assets/image-1.jpg'
 // import { Link } from 'react-router-dom'
 import SuggestedJob from '../Components/ReuseableComponets/miniJobCard/SuggestedJob'
 import JobCard from '../Components/ReuseableComponets/JobCard/JobCard'
-import { features, jobCategories, slider, userData } from '../data'
+import { features, jobCategories,  userData } from '../data'
 import Features from '../Components/Features'
 import HeroSection from '../Components/ReuseableComponets/Hero/Hero'
 
@@ -41,9 +41,9 @@ const Home = () => {
         <h2 className='text-2xl'>Job's Stories and articles</h2>
         <div className='flex md:flex-row flex-col gap-6 py-6'>
 
-          {userData.map((items)=>{
+          {userData.map((item)=>{
             return(  <div className='flex flex-col gap-4 shadow-2xl'>
-            <img src={image_1} alt='' />
+            <img src={image_1} alt={item.name} />
             <article className='flex flex-col p-4 gap-4'>
 
             <h5 className='font-bold capitalize '> mark Joe</h5>
