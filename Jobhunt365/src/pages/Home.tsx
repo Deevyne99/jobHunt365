@@ -35,9 +35,7 @@ const Home = () => {
             return <Features key={item.id} {...item} />
           })}
         </div>
-        <button className='p-2 flex justify-center items-center mt-8 bg-[#60a5fa] text-white font-semibold rounded-md w-[200px] mx-auto'>
-          Get Started
-        </button>
+        
       </div>
       <div className='flex mt-24 flex-col px-4 md:px-16'>
         <h2 className='text-2xl'>Job's Stories and articles</h2>
@@ -84,8 +82,8 @@ const Home = () => {
   <div className="max-w-7xl mx-auto px-6 py-12">
     {/* Brand */}
     <div>
-      <h3 className="text-3xl font-extrabold tracking-wide">JobHunt365</h3>
-      <p className="text-blue-100 mt-2 text-sm">
+      <h3 className="text-3xl font-extrabold tracking-wide text-white">JobHunt365</h3>
+      <p className="text-blue-100 mt-2 text-sm text-white">
         Your trusted partner in finding the right opportunities every day.
       </p>
     </div>
@@ -94,10 +92,10 @@ const Home = () => {
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
       {jobCategories.map((category, i) => (
         <div key={i}>
-          <h2 className="font-semibold text-lg mb-3">{category.name}</h2>
+          <h2 className="font-semibold text-lg text-white mb-3">{category.name}</h2>
           <ul className="space-y-2 text-sm text-blue-100">
             {category.examples.map((example, j) => (
-              <li key={j} className="hover:text-white cursor-pointer transition">
+              <li key={j} className="hover:text-white cursor-pointer transition text-white">
                 {example}
               </li>
             ))}
