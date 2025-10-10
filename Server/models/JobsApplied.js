@@ -51,3 +51,6 @@ const AppliedJob = new mongoose.Schema(
 )
 
 module.exports = mongoose.model('AppliedJobs', AppliedJob)
+
+
+

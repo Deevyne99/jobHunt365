@@ -16,7 +16,7 @@ const Home = () => {
       <HeroSection/>
       <div className='flex flex-col py-12 px-4 md:px-16 mt-28 justify-center bg-[#f5f7fb]'>
         <h2 className='text-2xl '>Recent Jobs</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  mt-6 justify-center gap-6 items-center '>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3  mt-6 justify-center gap-6 items-center '>
           <SuggestedJob />
           <SuggestedJob />
           <SuggestedJob />
@@ -66,7 +66,7 @@ const Home = () => {
       </div> */}
       <div className='flex flex-col py-12 px-4 md:px-16 mt-28 justify-center bg-[#f5f7fb]'>
         <h2 className='text-2xl '>Recent Applies</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  mt-6 justify-center gap-6 items-center '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  mt-6 justify-center gap-6 items-center '>
           <JobCard JobStatus={'Interview'} />
           <JobCard JobStatus={'Declined'} />
           <JobCard JobStatus={'Accepted'} />

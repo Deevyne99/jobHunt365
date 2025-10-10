@@ -22,7 +22,7 @@ const HeroSection=()=>{
     return () => clearInterval(slider)
   }, [productIndex])
 
-    return  <div className='flex flex-col md:h-[400px] h-[600px]  w-full gap-4 md:gap-8 mt-16 md:mt-24  mx-4 md:mx-12  relative items-center justify-center '>
+    return  <div className='flex flex-col md:h-[400px] h-[400px]  w-full gap-4 md:gap-8 mt-16 md:mt-24  mx-4 md:mx-12  relative items-center justify-center '>
             {slider.map((item, index) => {
               const { id, image, descp, title } = item
               let position = 'translate-x-full opacity-0'
@@ -44,9 +44,9 @@ const HeroSection=()=>{
                   key={id}
                 >
                   <article
-                    className={`w-full md:w-[50%] flex max-w-[600px] flex-col transition-transform duration-400  ${position}`}
+                    className={`w-full md:w-[50%] order-2 md:order-1  flex max-w-[600px] flex-col transition-transform duration-400  ${position}`}
                   >
-                    <h2 className='text-2xl md:text-left text-center text-[#4b5563] max-w-[500px] font-bold'>
+                    <h2 className='md:text-2xl text-lg md:text-left text-center text-[#4b5563] max-w-[500px] font-bold'>
                       {title}
                     </h2>
                     <p className='text-[#4b5563] w-full  p-2 tracking-wide leading-loose text-center md:text-left'>
@@ -56,8 +56,8 @@ const HeroSection=()=>{
                       Get Started
                     </button>
                   </article>
-                  <div className='w-full  md:w-[50%] md:flex-row flex-col flex md:gap-4 gap-0 justify-center items-center'>
-                    <div className='flex md:flex-col gap-8 flex-row order-2 md:order-1 justify-center items-center '>
+                  <div className='w-full  md:order-2 order-1 md:w-[50%] md:flex-row flex-col flex md:gap-4 gap-0 justify-center items-center'>
+                    <div className='flex md:flex-col gap-8 flex-row  md:order-1 justify-center items-center '>
                       {slider.map((item, index) => {
                         return (
                           <div
@@ -66,7 +66,7 @@ const HeroSection=()=>{
                               productIndex === index
                                 ? 'bg-[#60a5fa]'
                                 : 'bg-gray-100'
-                            }  md:w-[5px] md:h-[80px] w-[40px] h-[5px] md:mt-0 mt-4 `}
+                            }  md:w-[5px] md:h-[80px] hidden lg:flex w-[40px] h-[5px] md:mt-0 mt-4 `}
                           ></div>
                         )
                       })}
