@@ -9,7 +9,7 @@ const Login = () => {
       <header>
         <h1 className='capitalize text-2xl'>jobhunt365</h1>
       </header>
-      <div className='flex  flex-col gap-6 mt-4 mx-auto  justify-center items-center  w-full max-w-[400px]'>
+      <div className='flex  flex-col gap-6 mt-4 mx-auto  justify-center items-center  w-full max-w-[400px] px-4'>
         <div className='w-full '>
           <InputComponent label={'email'} />
         </div>

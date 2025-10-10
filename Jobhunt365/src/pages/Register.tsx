@@ -9,7 +9,7 @@ const Register = () => {
   // const [phone, setPhone] = useState<string>('')
   return (
     <section className='flex flex-col items-center justify-center py-8 px-4'>
-      <div className='flex flex-col gap-4 w-full max-w-[400px]'>
+      <div className='flex flex-col gap-4 w-full max-w-[400px] px-4'>
         <header>
           <h1 className='capitalize text-center text-2xl'>Let's get started</h1>
         </header>
